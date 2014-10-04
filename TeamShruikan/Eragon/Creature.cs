@@ -21,18 +21,17 @@
         public double Health { get; set; }
 
         /// <summary>
-        /// Gets or sets the experience of the hero
-        /// </summary>
-        public int Experience { get; set; }
-        
-        /// <summary>
         /// Gets or sets the radius in which the character can deal damage
         /// </summary>
         public int Range { get; set; }
 
-        void ICreature.Attack()
+        /// <summary>
+        /// Defines the way creatures are dealing damage to enemyCreature
+        /// </summary>
+        /// <param name="enemyCreature"></param>
+        public void AttackEnemies(Creature enemyCreature)
         {
-            throw new System.NotImplementedException();
+            enemyCreature.Health -= this.Attack - enemyCreature.Defense;
         }
     }
 }

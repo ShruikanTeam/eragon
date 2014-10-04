@@ -11,5 +11,10 @@
         /// Gets or sets the the experience gained by the player
         /// </summary>
         int Experience { get; set; }
+
+        /// <summary>
+        /// Defines the way the player is gaining experience
+        /// </summary>
+        void GainExperience();
     }
 }

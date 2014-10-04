@@ -1,0 +1,6 @@
+D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\bin\Debug\Eragon.exe.config
+D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\bin\Debug\Eragon.exe
+D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\bin\Debug\Eragon.pdb
+D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\obj\Debug\Eragon.csprojResolveAssemblyReference.cache
+D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\obj\Debug\Eragon.exe
+D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\obj\Debug\Eragon.pdb

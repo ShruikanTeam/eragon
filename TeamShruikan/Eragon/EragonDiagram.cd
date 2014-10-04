@@ -22,7 +22,7 @@
   <Class Name="Eragon.Creature" Collapsed="true">
     <Position X="4.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAACAAAAAAAAAAEAIAAAAAAAAAAAgAAQAA=</HashCode>
+      <HashCode>AAAACgAAAAAACAAAAAAAAAAAAIAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Creature.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -37,7 +37,7 @@
   <Class Name="Eragon.Player" Collapsed="true">
     <Position X="2.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -108,7 +108,7 @@
   <Interface Name="Eragon.ICreature" Collapsed="true">
     <Position X="13" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ICreature.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -119,7 +119,7 @@
       <FileName>IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="Eragon.Direction">
+  <Enum Name="Eragon.Direction" Collapsed="true">
     <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACCCABABAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAAQ=</HashCode>

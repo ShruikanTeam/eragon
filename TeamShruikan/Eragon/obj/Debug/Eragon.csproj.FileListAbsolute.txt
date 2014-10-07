@@ -4,3 +4,6 @@ D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\bin\Debug
 D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\obj\Debug\Eragon.csprojResolveAssemblyReference.cache
 D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\obj\Debug\Eragon.exe
 D:\Pecata\Documents\Programming\OOP-Teamwork\trunk\TeamShruikan\Eragon\obj\Debug\Eragon.pdb
+C:\Users\Yavor\Documents\GitHub\eragon\TeamShruikan\Eragon\bin\Debug\Eragon.exe.config
+C:\Users\Yavor\Documents\GitHub\eragon\TeamShruikan\Eragon\obj\Debug\Eragon.exe
+C:\Users\Yavor\Documents\GitHub\eragon\TeamShruikan\Eragon\obj\Debug\Eragon.pdb

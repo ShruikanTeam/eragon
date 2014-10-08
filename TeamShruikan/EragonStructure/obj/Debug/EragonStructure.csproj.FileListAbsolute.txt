@@ -1,0 +1,5 @@
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.dll
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.pdb
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.dll
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.pdb

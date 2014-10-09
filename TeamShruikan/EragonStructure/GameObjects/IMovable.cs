@@ -1,5 +1,7 @@
 ﻿namespace EragonStructure.GameObjects
 {
+    using EragonStructure.Structs;
+    using EragonStructure.Enumerations;
     /// <summary>
     /// Allows object to change their position on the game field
     /// </summary>

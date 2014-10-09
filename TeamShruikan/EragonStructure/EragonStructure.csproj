@@ -56,13 +56,12 @@
     <Compile Include="GameObjects\IDrawable.cs" />
     <Compile Include="GameObjects\IMovable.cs" />
     <Compile Include="GameObjects\IPlayer.cs" />
+    <Compile Include="Interfaces\IGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structs\Point.cs" />
     <Compile Include="Structs\Size.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>

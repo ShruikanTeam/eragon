@@ -1,5 +1,8 @@
 ﻿namespace EragonStructure.GameObjects
 {
+    using EragonStructure.Structs;
+    using EragonStructure.Enumerations;
+
     /// <summary>
     /// Defines that a movable character with attack and defense abilities can be created 
     /// </summary>

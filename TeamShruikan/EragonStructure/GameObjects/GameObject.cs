@@ -1,5 +1,6 @@
 ﻿namespace EragonStructure.GameObjects
 {
+    using EragonStructure.Structs;
     public abstract class GameObject : IDrawable
     {
         public Point Point { get; set; }

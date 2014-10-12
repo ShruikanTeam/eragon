@@ -2,7 +2,7 @@
 {
     using EragonStructure.Structs;
 
-    public sealed class Mage : Player
+    public class Mage : Player
     {
         public Mage(Point point, Size size, Picture picture, string name)
             : base(point, size, picture, name)

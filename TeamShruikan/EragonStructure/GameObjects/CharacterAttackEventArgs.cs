@@ -8,13 +8,13 @@ namespace EragonStructure.GameObjects
 {
     public class CharacterAttackEventArgs : EventArgs
     {
-        public int AttackX { get; set; }
-        public int AttackY { get; set; }
-
         public CharacterAttackEventArgs(int x, int y)
         {
             this.AttackX = x;
             this.AttackY = y;
         }
+
+        public int AttackX { get; set; }
+        public int AttackY { get; set; }
     }
 }

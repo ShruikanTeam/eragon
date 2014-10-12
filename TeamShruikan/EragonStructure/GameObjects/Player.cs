@@ -93,14 +93,15 @@
         public override void AttackEnemies(ICreature enemyCreature)
         {
             int damageDealed = this.Attack - enemyCreature.Defense;
+            this.GainExperience(damageDealed);
         }
 
         /// <summary>
         /// Defines the way a player is gaining experience
         /// </summary>
-        public void GainExperience()
+        public void GainExperience(int experienceToAdd)
         {
-            throw new System.NotImplementedException();
+            this.CurrentExperience += experienceToAdd;
         }
 
         public override void Move()

@@ -28,6 +28,11 @@
         int MaxHealthPoints { get; set; }
 
         /// <summary>
+        /// Gets the current state of the character - Dead or Alive.
+        /// </summary>
+        bool IsAlive { get; }
+
+        /// <summary>
         /// Define the attack method
         /// </summary>
         /// <param name="enemyCreature">The target of our attack</param>

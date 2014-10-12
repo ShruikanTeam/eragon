@@ -15,11 +15,13 @@
         {
         }
 
+        #region Properties
+
         /// <summary>
         /// Gets or sets the radius in which the character can deal damage
         /// </summary>
         public int Range { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the initial position of the character
         /// </summary>
@@ -56,8 +58,10 @@
                 {
                     this.currentHealthPoints = this.MaxHealthPoints;
                 }
-
-                this.currentHealthPoints = value;
+                else
+                {
+                    this.currentHealthPoints = value;
+                }
             }
         }
 
@@ -65,6 +69,19 @@
         /// Gets or sets the maximum health points of a character
         /// </summary>
         public int MaxHealthPoints { get; set; }
+
+        /// <summary>
+        /// Gets the current state of the character - Dead or Alive.
+        /// </summary>
+        public bool IsAlive
+        {
+            get
+            {
+                return this.currentHealthPoints > 0 ? true : false;
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// Defines the way creatures are dealing damage to enemyCreature

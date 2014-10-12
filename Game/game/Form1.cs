@@ -24,7 +24,7 @@
         {
             InitializeComponent();
             
-            new Settings();
+                new Settings();
             loadImages();
 
             //Set game speed and start timer
@@ -37,11 +37,11 @@
 
         public void loadImages()
         {
-            string ResPath = Directory.GetCurrentDirectory() + @"..\..\..\Resources\";
+            string resPath = Directory.GetCurrentDirectory() + @"..\..\..\Resources\";
             try
             {
-                hero = Image.FromFile(ResPath + "Run.png");
-                Background = Image.FromFile(ResPath + "Eragon_Saphira.png");
+                this.hero = Image.FromFile(resPath + "Run.png");
+                this.Background = Image.FromFile(resPath + "Eragon_Saphira.png");
             }
             catch (IOException)
             {
@@ -52,10 +52,10 @@
 
         private void StartGame()
         {
-            //Set settings to default
+            // settings to default
             new Settings();
             Settings.GameOver = false;
-            Settings.direction = Direction.Left;
+            Settings.direction = Direction.West;
             //Create new player object
 
         }
@@ -78,65 +78,82 @@
             }
             else
             {
-                if (Input.KeyPressed(Keys.Right) && Settings.direction != Direction.Left)
-                    Settings.direction = Direction.Right;
-                else if (Input.KeyPressed(Keys.Left) && Settings.direction != Direction.Right)
-                    Settings.direction = Direction.Left;
-                else if (Input.KeyPressed(Keys.Up) && Settings.direction != Direction.Down)
-                    Settings.direction = Direction.Up;
-                else if (Input.KeyPressed(Keys.Down) && Settings.direction != Direction.Up)
-                    Settings.direction = Direction.Down;
+                if (Input.KeyPressed(Keys.Right))
+                {
+                    Settings.direction = Direction.East;
+                }
+                else if (Input.KeyPressed(Keys.Left))
+                {
+                    Settings.direction = Direction.West;
+                }
+                else if (Input.KeyPressed(Keys.Up))
+                {
+                    Settings.direction = Direction.North;
+                }
+                else if (Input.KeyPressed(Keys.Down))
+                {
+                    Settings.direction = Direction.South;
+                }
 
                 MovePlayer();
             }
 
             pictureBox1.Invalidate();
-
         }
 
         private void MovePlayer()
         {
-            //Move head
             switch (Settings.direction)
             {
-                case Direction.Right:
-                    X += Settings.moveSpeed;
-                    break;
-                case Direction.Left:
-                    X -= Settings.moveSpeed;
-                    break;
-                case Direction.Up:
+                case Direction.North:
                     Y -= Settings.moveSpeed;
                     break;
-                case Direction.Down:
+                case Direction.NorthEast:
+                    Y -= Settings.moveSpeed;
+                    X += Settings.moveSpeed;
+                    break;
+                case Direction.East:
+                    X += Settings.moveSpeed;
+                    break;
+                case Direction.SouthEast:
                     Y += Settings.moveSpeed;
+                    X += Settings.moveSpeed;
+                    break;
+                case Direction.South:
+                    Y += Settings.moveSpeed;
+                    break;
+                case Direction.SouthWest:
+                    Y += Settings.moveSpeed;
+                    X -= Settings.moveSpeed;
+                    break;
+                case Direction.West:
+                    X -= Settings.moveSpeed;
+                    break;
+                case Direction.NorthWest:
+                    Y -= Settings.moveSpeed;
+                    X -= Settings.moveSpeed;
                     break;
             }
 
-
-            //Get maximum X and Y Pos
-            int maxXPos = pictureBox1.Size.Width;
-            int maxYPos = pictureBox1.Size.Height;
-
             //Detect collission with game borders.
-            if (X < 0 )
+            if (X < 16)
             {
-                Settings.direction = Direction.Right;
-            }
-            
-            if (Y < 0)
-            {
-                Settings.direction = Direction.Down;
+                Settings.direction = Direction.East;
             }
 
-            if (X > pictureBox1.Width)
+            if (Y < 32)
             {
-                Settings.direction = Direction.Left;
+                Settings.direction = Direction.South;
             }
 
-            if (Y > pictureBox1.Height)
+            if (X > pictureBox1.Width - 16)
             {
-                Settings.direction = Direction.Up;
+                Settings.direction = Direction.West;
+            }
+
+            if (Y > pictureBox1.Height - 32)
+            {
+                Settings.direction = Direction.North;
             }
         }
 

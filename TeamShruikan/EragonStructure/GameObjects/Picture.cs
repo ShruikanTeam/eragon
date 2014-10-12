@@ -1,7 +1,14 @@
 ﻿namespace EragonStructure
 {
+    using EragonStructure.Structs;
+
     public class Picture
     {
-        // TODO Implement this class. Should hold the image of the game object and some other properties like size etc.
+        public Size Size { get; set; }
+
+        public object Image { get; set; }
+
+        public int SpriteColumns { get; set; }
+
     }
 }

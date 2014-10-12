@@ -18,9 +18,8 @@
         Picture Picture { get; set; }
 
         /// <summary>
-        /// Draws the object on the game field
+        /// Gets or sets the size of the object
         /// </summary>
-        /// <param name="point"></param>
-        void Draw(Point point);
+        Size Size { get; set; }
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="GameObjects\IDrawable.cs" />
     <Compile Include="GameObjects\IMovable.cs" />
     <Compile Include="GameObjects\IPlayer.cs" />
+    <Compile Include="GameObjects\ILevelUp.cs" />
     <Compile Include="Interfaces\IGame.cs" />
     <Compile Include="Interfaces\IUserInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

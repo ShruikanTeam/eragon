@@ -1,31 +1,17 @@
 ﻿namespace EragonStructure.GameObjects
 {
+    using EragonStructure.Structs;
+
     public class Fighter : Player
     {
-        // Start of singleton pattern (singleton is a class
-        // which only allows a single instance of itself to be created)
-        private static Fighter instance = null;
-
-        protected Fighter()
+        public Fighter(Point point, Size size, Picture picture, string name)
+            : base(point, size, picture, name)
         {
-            this.Name = "Brom";
-            this.Attack = 20;
-            this.Defense = 15;
-            this.Health = 60;
-            this.Range = 0;
+            this.Attack += 10;
+            this.Defense += 10;
+            this.CurrentHealthPoints += 10;
+            this.MaxHealthPoints += 10;
+            this.Range = 1;
         }
-
-        public static Fighter GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new Fighter();
-            }
-            
-            return instance;
-        }
-
-        // End of singleton pattern
-
     }
 }

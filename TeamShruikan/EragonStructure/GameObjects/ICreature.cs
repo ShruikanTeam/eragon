@@ -8,8 +8,29 @@
         int Range { get; set; }
 
         /// <summary>
+        /// Gets or sets the attack points of the character
+        /// </summary>
+        int Attack { get; set; }
+
+        /// <summary>
+        /// Gets or sets the defense points of the character
+        /// </summary>
+        int Defense { get; set; }
+
+        /// <summary>
+        /// Gets or sets the current health points of the character
+        /// </summary>
+        int CurrentHealthPoints { get; set; }
+
+        /// <summary>
+        /// Gets or sets the maximum health points of a character
+        /// </summary>
+        int MaxHealthPoints { get; set; }
+
+        /// <summary>
         /// Define the attack method
         /// </summary>
-        void AttackEnemies(Creature enemyCreature);
+        /// <param name="enemyCreature">The target of our attack</param>
+        void AttackEnemies(ICreature enemyCreature);
     }
 }

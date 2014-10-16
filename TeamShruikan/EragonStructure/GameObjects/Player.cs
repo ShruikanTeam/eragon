@@ -1,10 +1,8 @@
 ﻿namespace EragonStructure.GameObjects
 {
-    using System.Collections;
-
-    using EragonStructure.Enumerations;
-    using EragonStructure.Structs;
     using System.Collections.Generic;
+
+    using EragonStructure.Structs;
 
     /// <summary>
     /// Allows us to create classes derived from this abstract class
@@ -41,7 +39,8 @@
             this.Money = 50m;
             this.Level = currentLevel;
 
-            GetPlayerStats(this.Stats);
+            GetPlayerStats(this.Stats);                     // Initializes default player stats 
+            this.EquipPlayer(this.Equipment, this.Stats);   // Add item stats to the player stats
         }
 
         public int Level
@@ -106,45 +105,43 @@
         /// Gets or sets the amount of money of the current player
         /// </summary>
         public decimal Money { get; set; }
-
-        protected PowerStats Stats
+        
+        /// <summary>
+        /// Gets or sets the items that player is equipped with.
+        /// </summary>
+        public ICollection<IInventory> Equipment
         {
-            get
-            {
-                return this.stats;
-            }
-            set
-            {
-                this.stats = value;
-            }
+            get { return this.equipment; }
+            set { this.equipment = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the player stats (Attack, Defense, Range, Maximum health points and Movement speed).
+        /// </summary>
+        protected PowerStats Stats
+        {
+            get { return this.stats; }
+            set { this.stats = value; }
+        }
+
+        /// <summary>
+        /// Defines the way a player is gaining experience
+        /// </summary>
+        /// <param name="experienceToAdd">The amount of experience added to the current experience points.</param>
+        public void GainExperience(int experienceToAdd)
+        {
+            this.CurrentExperience += experienceToAdd;
+        }
+        
         public override void AttackEnemies(ICreature enemyCreature)
         {
             int damageDealed = this.Attack - enemyCreature.Defense;
             this.GainExperience(damageDealed);
         }
 
-        public ICollection<IInventory> Equipment
-        {
-            get
-            {
-                return this.equipment;
-            }
-            set
-            {
-                this.equipment = value;
-            }
-        }
-
         /// <summary>
-        /// Defines the way a player is gaining experience
+        /// Defines the way the player is changing its position on the screen.
         /// </summary>
-        public void GainExperience(int experienceToAdd)
-        {
-            this.CurrentExperience += experienceToAdd;
-        }
-
         public override void Move()
         {
             int horizontalPosition = this.CurrentPoint.X;
@@ -194,20 +191,15 @@
             //    }
         }
 
-        protected PowerStats GetPlayerStats(PowerStats stats)
+        /// <summary>
+        /// Actualizes the player stats based on the items he is equipped with
+        /// </summary>
+        /// <param name="playerEquipment">The set of items the player is equipped with.</param>
+        /// <param name="playerStats">The player current stats, without the equipment.</param>
+        /// <returns>The actualized stats after the player has been equipped.</returns>
+        protected virtual PowerStats EquipPlayer(ICollection<IInventory> playerEquipment, PowerStats playerStats)
         {
-            stats.Attack += this.Attack;
-            stats.Defense += this.Defense;
-            stats.Range += this.Range;
-            stats.CurrentHealth += this.CurrentHealthPoints;
-            stats.MaximumHealth += this.MaxHealthPoints;
-
-            return stats;
-        }
-
-        public PowerStats EquipPlayer(ICollection<IInventory> equipment, PowerStats playerStats)
-        {
-            foreach (var item in equipment)
+            foreach (var item in playerEquipment)
             {
                 playerStats.Attack += item.Stats.Attack;
                 playerStats.Defense += item.Stats.Defense;
@@ -217,6 +209,22 @@
             }
 
             return playerStats;
+        }
+
+        /// <summary>
+        /// Sets the initial player stats.
+        /// </summary>
+        /// <param name="stats">Initial player stats.</param>
+        /// <returns>Returns actualized initial player stats.</returns>
+        protected PowerStats GetPlayerStats(PowerStats stats)
+        {
+            stats.Attack += this.Attack;
+            stats.Defense += this.Defense;
+            stats.Range += this.Range;
+            stats.CurrentHealth += this.CurrentHealthPoints;
+            stats.MaximumHealth += this.MaxHealthPoints;
+
+            return stats;
         }
     }
 }

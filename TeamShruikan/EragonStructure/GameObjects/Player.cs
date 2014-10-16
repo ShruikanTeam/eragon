@@ -1,7 +1,10 @@
 ﻿namespace EragonStructure.GameObjects
 {
+    using System.Collections;
+
     using EragonStructure.Enumerations;
     using EragonStructure.Structs;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Allows us to create classes derived from this abstract class
@@ -14,6 +17,10 @@
 
         private int experienceNeeded;
 
+        private PowerStats stats;
+
+        private ICollection<IInventory> equipment;
+
         /// <summary>
         /// Initializes a new instance of the Player class with default 
         /// values for money and experience which will be later inherited</summary>
@@ -21,16 +28,21 @@
         /// <param name="size">The size of the player</param>
         /// <param name="picture">The image of the player</param>
         /// <param name="name">The name of the player</param>
-        protected Player(Point point, Size size, Picture picture, string name)
+        protected Player(Point point, Size size, Picture picture, string name, int currentLevel)
             : base(point, size, picture, name)
         {
             this.Attack = 50;
             this.Defense = 50;
+            this.Range = 1;
+            this.CurrentHealthPoints = 100;
             this.MaxHealthPoints = 100;
-            this.currentExperience = 100;
+            this.MovementSpeed = 5;
+            this.CurrentExperience = 0;
             this.Money = 50m;
-        }
+            this.Level = currentLevel;
 
+            GetPlayerStats(this.Stats);
+        }
 
         public int Level
         {
@@ -60,7 +72,12 @@
 
             set
             {
-                this.currentExperience = value;
+                this.currentExperience += value;
+
+                if (value < 0)
+                {
+                    value = 0;
+                }
 
                 if (this.currentExperience >= this.ExperienceNeeded)
                 {
@@ -90,10 +107,34 @@
         /// </summary>
         public decimal Money { get; set; }
 
+        protected PowerStats Stats
+        {
+            get
+            {
+                return this.stats;
+            }
+            set
+            {
+                this.stats = value;
+            }
+        }
+
         public override void AttackEnemies(ICreature enemyCreature)
         {
             int damageDealed = this.Attack - enemyCreature.Defense;
             this.GainExperience(damageDealed);
+        }
+
+        public ICollection<IInventory> Equipment
+        {
+            get
+            {
+                return this.equipment;
+            }
+            set
+            {
+                this.equipment = value;
+            }
         }
 
         /// <summary>
@@ -151,6 +192,31 @@
             //    {
             //        Settings.Direction = Direction.North;
             //    }
+        }
+
+        protected PowerStats GetPlayerStats(PowerStats stats)
+        {
+            stats.Attack += this.Attack;
+            stats.Defense += this.Defense;
+            stats.Range += this.Range;
+            stats.CurrentHealth += this.CurrentHealthPoints;
+            stats.MaximumHealth += this.MaxHealthPoints;
+
+            return stats;
+        }
+
+        public PowerStats EquipPlayer(ICollection<IInventory> equipment, PowerStats playerStats)
+        {
+            foreach (var item in equipment)
+            {
+                playerStats.Attack += item.Stats.Attack;
+                playerStats.Defense += item.Stats.Defense;
+                playerStats.Range += item.Stats.Range;
+                playerStats.MaximumHealth += item.Stats.MaximumHealth;
+                playerStats.MovementSpeed += item.Stats.MovementSpeed;
+            }
+
+            return playerStats;
         }
     }
 }

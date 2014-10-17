@@ -32,7 +32,7 @@
         /// <param name="size">The size of the player</param>
         /// <param name="picture">The image of the player</param>
         /// <param name="name">The name of the player</param>
-        protected Player(Point point, Size size, Picture picture, string name, int currentLevel)
+        protected Player(Point point, Size size, Picture picture, string name, int currentLevel, int experienceNeeded)
             : base(point, size, picture, name)
         {
             this.Attack = 50;
@@ -44,6 +44,7 @@
             this.CurrentExperience = 0;
             this.Money = 50m;
             this.Level = currentLevel;
+            this.experienceNeeded = experienceNeeded;
 
             GetPlayerStats(this.Stats);                     // Initializes default player stats 
             this.EquipPlayer(this.Equipment, this.Stats);   // Add item stats to the player stats

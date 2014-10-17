@@ -4,8 +4,8 @@
 
     public class Shooter : Player
     {
-        public Shooter(Point point, Size size, Picture picture, string name, int currentLevel)
-            : base(point, size, picture, name, currentLevel)
+        public Shooter(Point point, Size size, Picture picture, string name, int currentLevel, int experienceNeeded)
+            : base(point, size, picture, name, currentLevel, experienceNeeded)
         {
             this.Attack += 5;
             this.Defense -= 10;

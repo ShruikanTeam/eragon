@@ -63,7 +63,7 @@
                 case Keys.Space:
                     if (this.OnSpacePressed != null)
                     {
-                        this.OnSpacePressed(this, new CharacterAttackEventArgs(e.X, e.Y));
+                        //this.OnSpacePressed(this, new CharacterAttackEventArgs(e.X, e.Y));
                     }
                     break;
                 default:

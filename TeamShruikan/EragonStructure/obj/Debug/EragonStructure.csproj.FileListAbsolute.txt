@@ -3,3 +3,10 @@ D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructur
 D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
 D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.dll
 D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.pdb
+E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
+E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.pdb
+E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.pdb
+E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.UI.Window.resources
+E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csproj.GenerateResource.Cache
+E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.exe
+E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.exe

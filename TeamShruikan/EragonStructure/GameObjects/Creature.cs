@@ -8,12 +8,20 @@
     /// </summary>
     public abstract class Creature : Character, ICreature, IMovable
     {
+        #region Fields
+
         private int currentHealth;
+
+        #endregion
+
+        #region Constructors
 
         protected Creature(Point point, Size size, Picture picture, string name)
             : base(point, size, picture, name)
         {
         }
+
+        #endregion
 
         #region Properties
 

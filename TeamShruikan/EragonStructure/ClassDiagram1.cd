@@ -17,7 +17,7 @@
   <Class Name="EragonStructure.GameObjects.Creature" Collapsed="true">
     <Position X="5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ARAAAgAQAMAACAAAACAAAAAAAIgFAAAAAAAAAgAAAAE=</HashCode>
+      <HashCode>AQAAAgAAAMAACAAAACAAAAAAAIgFAAAAAAAAAgAAAAE=</HashCode>
       <FileName>GameObjects\Creature.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -68,7 +68,7 @@
   <Class Name="EragonStructure.GameObjects.Player" Collapsed="true">
     <Position X="2.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAgAAAIgAAAAIAAAAAAgAAAEIAEABAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAQAgAQAIgAAAQIAAAAAAwAAAEMAEABAAAAAAAgAAA=</HashCode>
       <FileName>GameObjects\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -113,7 +113,7 @@
     <Position X="12" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAACAAAAAAAAAQAAIgAAAAAAAAAAgAAAAA=</HashCode>
-      <FileName>PowerStats.cs</FileName>
+      <FileName>Structs\PowerStats.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="EragonStructure.GameObjects.ICreature" Collapsed="true">
@@ -161,8 +161,8 @@
   <Interface Name="EragonStructure.IInventory" Collapsed="true">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IInventory.cs</FileName>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\IInventory.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

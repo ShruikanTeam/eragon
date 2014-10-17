@@ -9,6 +9,8 @@
     /// </summary>
     public abstract class Player : Creature, IPlayer, ILevelUp
     {
+        #region Fields 
+
         private int level = 1;
 
         private int currentExperience;
@@ -18,6 +20,10 @@
         private PowerStats stats;
 
         private ICollection<IInventory> equipment;
+
+        #endregion
+
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the Player class with default 
@@ -42,6 +48,10 @@
             GetPlayerStats(this.Stats);                     // Initializes default player stats 
             this.EquipPlayer(this.Equipment, this.Stats);   // Add item stats to the player stats
         }
+
+        #endregion
+
+        #region Properties
 
         public int Level
         {
@@ -86,19 +96,12 @@
         }
 
         /// <summary>
-        /// Gets or sets experience needed by the player to raise a level up
+        /// Gets the experience needed by the player to raise a level up
         /// </summary>
         public int ExperienceNeeded
         {
-            get
-            {
-                return this.experienceNeeded;
-            }
-
-            private set
-            {
-                this.currentExperience = 500 * this.Level;
-            }
+            get { return this.experienceNeeded; }
+            private set { this.currentExperience = 500 * this.Level; }
         }
 
         /// <summary>
@@ -123,6 +126,10 @@
             get { return this.stats; }
             set { this.stats = value; }
         }
+
+        #endregion
+
+        #region Methods
 
         /// <summary>
         /// Defines the way a player is gaining experience
@@ -226,5 +233,7 @@
 
             return stats;
         }
+
+        #endregion
     }
 }

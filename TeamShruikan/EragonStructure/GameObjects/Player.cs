@@ -2,12 +2,13 @@
 {
     using System.Collections.Generic;
 
+    using EragonStructure.Enumerations;
     using EragonStructure.Structs;
 
     /// <summary>
     /// Allows us to create classes derived from this abstract class
     /// </summary>
-    public abstract class Player : Creature, IPlayer, ILevelUp
+    public abstract class Player : Creature, IPlayer, ILevelUp, IMovable
     {
         #region Fields 
 
@@ -68,6 +69,16 @@
                 }
             }
         }
+
+        /// <summary>
+        /// Gets or sets the initial position of the character
+        /// </summary>
+        public Point CurrentPoint { get; set; }
+
+        /// <summary>
+        /// Gets or sets the movement direction of the character
+        /// </summary>
+        public Direction Direction { get; set; }
 
         /// <summary>
         /// Gets or sets the current experience of the player
@@ -149,7 +160,7 @@
         /// <summary>
         /// Defines the way the player is changing its position on the screen.
         /// </summary>
-        public override void Move()
+        public void Move()
         {
             int horizontalPosition = this.CurrentPoint.X;
             int verticalPosition = this.CurrentPoint.Y;

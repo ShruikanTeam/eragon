@@ -6,7 +6,7 @@
     /// <summary>
     /// Defines that a movable character with attack and defense abilities can be created 
     /// </summary>
-    public abstract class Creature : Character, ICreature, IMovable
+    public abstract class Creature : GameObject, ICreature
     {
         #region Fields
 
@@ -17,8 +17,9 @@
         #region Constructors
 
         protected Creature(Point point, Size size, Picture picture, string name)
-            : base(point, size, picture, name)
+            : base(point, size, picture)
         {
+            this.Name = name;
         }
 
         #endregion
@@ -26,14 +27,9 @@
         #region Properties
 
         /// <summary>
-        /// Gets or sets the initial position of the character
+        /// Gets or sets the name of the character
         /// </summary>
-        public Point CurrentPoint { get; set; }
-
-        /// <summary>
-        /// Gets or sets the movement direction of the character
-        /// </summary>
-        public Direction Direction { get; set; }
+        protected string Name { get; set; }
         
         /// <summary>
         /// Gets or sets the attack points of the character
@@ -117,11 +113,6 @@
         {
             enemyCreature.CurrentHealthPoints -= this.Attack - enemyCreature.Defense;
         }
-
-        /// <summary>
-        /// Allows the character to change its position on the map
-        /// </summary>
-        public abstract void Move();
 
         #endregion
     }

@@ -1,43 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="EragonStructure.GameObjects.Boss" Collapsed="true">
-    <Position X="6.25" Y="5.5" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Boss.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="EragonStructure.GameObjects.Character" Collapsed="true">
-    <Position X="5" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameObjects\Character.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="EragonStructure.GameObjects.Creature" Collapsed="true">
-    <Position X="5" Y="2.75" Width="1.5" />
+    <Position X="5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAgAAAMAACAAAACAAAAAAAIgFAAAAAAAAAgAAAAE=</HashCode>
+      <HashCode>AQAAAgAAAEAACAAAAAAAAAQAAIgEAAAAAAAAAgAAAAE=</HashCode>
       <FileName>GameObjects\Creature.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="EragonStructure.GameObjects.Creep" Collapsed="true">
-    <Position X="8.5" Y="5.5" Width="1.5" />
+    <Position X="8.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Creep.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EragonStructure.GameObjects.Enemy" Collapsed="true">
-    <Position X="7.25" Y="4.25" Width="1.5" />
+    <Position X="7.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Enemy.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="EragonStructure.GameObjects.Fighter" Collapsed="true">
-    <Position X="1" Y="5.5" Width="1.5" />
+    <Position X="1" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Fighter.cs</FileName>
@@ -52,29 +46,29 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="EragonStructure.GameObjects.Mage" Collapsed="true">
-    <Position X="4.5" Y="5.5" Width="1.5" />
+    <Position X="4.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Mage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EragonStructure.GameObjects.PassiveCharacter" Collapsed="true">
-    <Position X="9" Y="2.75" Width="1.5" />
+    <Position X="11" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\PassiveCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EragonStructure.GameObjects.Player" Collapsed="true">
-    <Position X="2.75" Y="4.25" Width="1.5" />
+    <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAQAgAQAIgAAAQIAAAAAAwAAAEMAEABAAAAAAAgAAA=</HashCode>
+      <HashCode>ABAQAgAQAIgAAAQIACAAAAwAAAENAEABAAAAAAAgAAA=</HashCode>
       <FileName>GameObjects\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="EragonStructure.GameObjects.Shooter" Collapsed="true">
-    <Position X="2.75" Y="5.5" Width="1.5" />
+    <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Shooter.cs</FileName>

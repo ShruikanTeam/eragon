@@ -3,11 +3,12 @@ using EragonStructure.UI;
 
 namespace EragonStructure
 {
-    public class GameLauncher
+    public class GameLauncher v
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        
         static void Main()
         {
             Application.EnableVisualStyles();

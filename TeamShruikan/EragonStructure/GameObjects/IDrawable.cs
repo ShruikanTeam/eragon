@@ -8,6 +8,11 @@
     public interface IDrawable
     {
         /// <summary>
+        /// Draws the object on Graphic
+        /// </summary>
+        void Draw(System.Drawing.Graphics g);
+        /*
+        /// <summary>
         /// Gets or sets the coordinates of an object
         /// </summary>
         Point Point { get; set; }
@@ -21,5 +26,6 @@
         /// Gets or sets the size of the object
         /// </summary>
         Size Size { get; set; }
+         * */
     }
 }

@@ -10,16 +10,24 @@
     {
         #region Fields
 
+        //private string name;
+
         private int currentHealth;
 
         #endregion
 
         #region Constructors
 
-        protected Creature(Point point, Size size, Picture picture, string name)
+        protected Creature(Point point, Size size, Picture picture, string name, int attack, int defence, int range, int currentHealthPoints, int maxHealthPoints, int movementsSpeed)
             : base(point, size, picture)
         {
-            this.Name = name;
+            Name = name;
+            Attack = attack;
+            Defense = defence;
+            Range = range;
+            CurrentHealthPoints = currentHealthPoints;
+            MaxHealthPoints = maxHealthPoints;
+            MovementSpeed = movementsSpeed;
         }
 
         #endregion
@@ -34,18 +42,7 @@
         /// <summary>
         /// Gets or sets the attack points of the character
         /// </summary>
-        public int Attack 
-        {
-            get
-            {
-                return this.Attack;
-            }
-
-            set
-            {
-                this.Attack = value;
-            } 
-        }
+        public int Attack { get; set; }
 
         /// <summary>
         /// Gets or sets the defense points of the character

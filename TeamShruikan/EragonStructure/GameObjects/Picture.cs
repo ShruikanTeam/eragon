@@ -4,9 +4,14 @@
 
     public class Picture
     {
+        public Picture(System.Drawing.Image img)
+        {
+            this.Image = img;
+        }
+
         public Size Size { get; set; }
 
-        public object Image { get; set; }
+        public System.Drawing.Image Image { get; set; }
 
         public int SpriteColumns { get; set; }
 

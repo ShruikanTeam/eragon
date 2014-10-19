@@ -55,6 +55,7 @@
     <Compile Include="GameObjects\Fighter.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="GameObjects\IInventory.cs" />
+    <Compile Include="GameObjects\World.cs" />
     <Compile Include="Interfaces\KeyboardController.cs" />
     <Compile Include="GameObjects\Mage.cs" />
     <Compile Include="GameObjects\PassiveCharacter.cs" />
@@ -82,7 +83,10 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Eragon_Saphira.png" />
+    <Content Include="Resources\hero.png" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\Window.resx">
       <DependentUpon>Window.cs</DependentUpon>

@@ -8,7 +8,7 @@
     /// <summary>
     /// Allows us to create classes derived from this abstract class
     /// </summary>
-    public abstract class Player : Creature, IPlayer, ILevelUp, IMovable
+    public abstract class Player : Creature, IPlayer, ILevelUp, IMovable, IDrawable
     {
         #region Fields 
 
@@ -33,9 +33,10 @@
         /// <param name="size">The size of the player</param>
         /// <param name="picture">The image of the player</param>
         /// <param name="name">The name of the player</param>
-        protected Player(Point point, Size size, Picture picture, string name, int currentLevel, int experienceNeeded)
-            : base(point, size, picture, name)
+        protected Player(Point point, Size size, Picture picture, string name, int attack, int defence, int range, int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded)
+            : base(point, size, picture, name, attack, defence, range, currentHealthPoints, maxHealthPoints, movementsSpeed)
         {
+            
             this.Attack = 50;
             this.Defense = 50;
             this.Range = 1;
@@ -43,12 +44,13 @@
             this.MaxHealthPoints = 100;
             this.MovementSpeed = 5;
             this.CurrentExperience = 0;
+            
             this.Money = 50m;
             this.Level = currentLevel;
             this.experienceNeeded = experienceNeeded;
 
-            GetPlayerStats(this.Stats);                     // Initializes default player stats 
-            this.EquipPlayer(this.Equipment, this.Stats);   // Add item stats to the player stats
+            SetPlayerStats();                     // Initializes default player stats 
+            this.EquipPlayer(this.Equipment);   // Add item stats to the player stats
         }
 
         #endregion
@@ -216,18 +218,17 @@
         /// <param name="playerEquipment">The set of items the player is equipped with.</param>
         /// <param name="playerStats">The player current stats, without the equipment.</param>
         /// <returns>The actualized stats after the player has been equipped.</returns>
-        protected virtual PowerStats EquipPlayer(ICollection<IInventory> playerEquipment, PowerStats playerStats)
+        protected virtual void EquipPlayer(ICollection<IInventory> playerEquipment)
         {
+            if (playerEquipment == null) return;
             foreach (var item in playerEquipment)
             {
-                playerStats.Attack += item.Stats.Attack;
-                playerStats.Defense += item.Stats.Defense;
-                playerStats.Range += item.Stats.Range;
-                playerStats.MaximumHealth += item.Stats.MaximumHealth;
-                playerStats.MovementSpeed += item.Stats.MovementSpeed;
+                stats.Attack += item.Stats.Attack;
+                stats.Defense += item.Stats.Defense;
+                stats.Range += item.Stats.Range;
+                stats.MaximumHealth += item.Stats.MaximumHealth;
+                stats.MovementSpeed += item.Stats.MovementSpeed;
             }
-
-            return playerStats;
         }
 
         /// <summary>
@@ -235,7 +236,7 @@
         /// </summary>
         /// <param name="stats">Initial player stats.</param>
         /// <returns>Returns actualized initial player stats.</returns>
-        protected PowerStats GetPlayerStats(PowerStats stats)
+        protected PowerStats SetPlayerStats()
         {
             stats.Attack += this.Attack;
             stats.Defense += this.Defense;
@@ -247,5 +248,10 @@
         }
 
         #endregion
+
+        /*public void Draw(System.Drawing.Graphics g)
+        {
+            g.DrawImage(Picture.Image, this.Point.X, this.Point.Y);
+        }*/
     }
 }

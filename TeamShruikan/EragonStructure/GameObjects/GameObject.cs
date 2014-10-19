@@ -16,5 +16,10 @@
         public Point Point { get; set; }
 
         public Picture Picture { get; set; }
+
+        public void Draw(System.Drawing.Graphics g)
+        {
+            g.DrawImage(Picture.Image, Point.X, Point.Y);
+        }
     }
 }

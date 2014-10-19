@@ -4,8 +4,8 @@
 
     public class Fighter : Player
     {
-        public Fighter(Point point, Size size, Picture picture, string name, int currentLevel, int experienceNeeded)
-            : base(point, size, picture, name, currentLevel, experienceNeeded)
+        public Fighter(Point point, Size size, Picture picture, string name, int attack, int defence, int range, int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded)
+            : base(point, size, picture, name, attack, defence, range, currentHealthPoints, maxHealthPoints, movementsSpeed, currentLevel, experienceNeeded)
         {
             this.Attack += 10;
             this.Defense += 10;

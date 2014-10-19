@@ -1,4 +1,5 @@
-﻿namespace EragonStructure.GameObjects
+﻿using System;
+namespace EragonStructure.GameObjects
 {
     public abstract class DeffenseInventoryItem : InventoryItem
     {

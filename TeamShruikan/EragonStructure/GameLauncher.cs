@@ -3,7 +3,7 @@ using EragonStructure.UI;
 
 namespace EragonStructure
 {
-    public class GameLauncher v
+    public class GameLauncher 
     {
         /// <summary>
         /// The main entry point for the application.

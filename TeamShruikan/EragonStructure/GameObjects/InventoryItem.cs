@@ -1,7 +1,6 @@
 ﻿namespace EragonStructure.GameObjects
 {
-        public abstract class InventoryItem : IInventoryItem
-
+    public abstract class InventoryItem : IInventoryItem
     {
         public string Name
         {
@@ -15,4 +14,5 @@
             set;
         }
 
+    }
 }

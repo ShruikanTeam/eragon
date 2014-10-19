@@ -46,15 +46,20 @@
   <ItemGroup>
     <Compile Include="Enumerations\Direction.cs" />
     <Compile Include="GameLauncher.cs" />
+    <Compile Include="GameObjects\AdditionalItem.cs" />
+    <Compile Include="GameObjects\AttackInventoryItem.cs" />
     <Compile Include="GameObjects\Boss.cs" />
     <Compile Include="GameObjects\Character.cs" />
     <Compile Include="GameObjects\CharacterAttackEventArgs.cs" />
     <Compile Include="GameObjects\Creature.cs" />
     <Compile Include="GameObjects\Creep.cs" />
+    <Compile Include="GameObjects\DeffenceInventoryItem.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
     <Compile Include="GameObjects\Fighter.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="GameObjects\IInventory.cs" />
+    <Compile Include="GameObjects\IInventoryItem.cs" />
+    <Compile Include="GameObjects\InventoryItem.cs" />
     <Compile Include="GameObjects\World.cs" />
     <Compile Include="Interfaces\KeyboardController.cs" />
     <Compile Include="GameObjects\Mage.cs" />

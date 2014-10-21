@@ -1,6 +1,6 @@
 ﻿namespace EragonStructure.GameObjects
 {
-    interface IInventoryItem
+    public interface IInventoryItem
     {
         string Name
         {

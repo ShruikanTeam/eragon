@@ -27,6 +27,8 @@
         /// </summary>
         int MaxHealthPoints { get; set; }
 
+        int Mana { get; set; }
+
         int MovementSpeed { get; set; }
 
         /// <summary>

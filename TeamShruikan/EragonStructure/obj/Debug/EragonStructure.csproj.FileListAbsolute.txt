@@ -5,3 +5,10 @@ E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStruct
 E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csproj.GenerateResource.Cache
 E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.exe
 E:\BIO\SoftUni\02 OOP\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.pdb
+D:\New Chapter\GitHub\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.exe
+D:\New Chapter\GitHub\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.pdb
+D:\New Chapter\GitHub\eragon\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.exe
+D:\New Chapter\GitHub\eragon\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.pdb
+D:\New Chapter\GitHub\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
+D:\New Chapter\GitHub\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.UI.Window.resources
+D:\New Chapter\GitHub\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csproj.GenerateResource.Cache

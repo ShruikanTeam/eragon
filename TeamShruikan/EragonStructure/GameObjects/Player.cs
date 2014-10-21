@@ -165,30 +165,30 @@
         /// </summary>
         public void Move()
         {
-            int horizontalPosition = this.CurrentPoint.X;
-            int verticalPosition = this.CurrentPoint.Y;
+            int horizontalPosition = this.Point.X;
+            int verticalPosition = this.Point.Y;
 
             // This piece of code is copied from Yavor's form. I guess it should be implemented here, 
             // will leave commented for now. 
-            //    switch (Settings.Direction)
-            //    {
-            //        case Direction.North:
-            //            verticalPosition -= Settings.MoveSpeed;
-            //            this.CurrentPoint = new Point(horizontalPosition, verticalPosition);
-            //            break;
-            //        case Direction.East:
-            //            horizontalPosition += Settings.MoveSpeed;
-            //            this.CurrentPoint= new Point(horizontalPosition, verticalPosition);
-            //            break;
-            //        case Direction.South:
-            //            verticalPosition += Settings.MoveSpeed;
-            //            this.CurrentPoint = new Point(horizontalPosition, verticalPosition);
-            //            break;
-            //        case Direction.West:
-            //            horizontalPosition -= Settings.MoveSpeed;
-            //            this.CurrentPoint = new Point(horizontalPosition, verticalPosition);
-            //            break;
-            //    }
+            switch (this.Direction)
+            {
+                case Direction.North:
+                    verticalPosition -= this.MovementSpeed;
+                    this.Point = new Point(horizontalPosition, verticalPosition);
+                    break;
+                case Direction.East:
+                    horizontalPosition += this.MovementSpeed;
+                    this.Point = new Point(horizontalPosition, verticalPosition);
+                    break;
+                case Direction.South:
+                    verticalPosition += this.MovementSpeed;
+                    this.Point = new Point(horizontalPosition, verticalPosition);
+                    break;
+                case Direction.West:
+                    horizontalPosition -= this.MovementSpeed;
+                    this.Point = new Point(horizontalPosition, verticalPosition);
+                    break;
+            }
 
             //    //Detect collission with game borders.
             //    if (horizontalPosition < 16)

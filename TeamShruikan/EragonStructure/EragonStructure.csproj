@@ -87,15 +87,67 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Eragon_Saphira.png" />
-    <Content Include="Resources\hero.png" />
+    <None Include="Resources\BadGuys\bat.psd" />
+    <None Include="Resources\BadGuys\BossCyclop.psd" />
+    <None Include="Resources\BadGuys\BossIceMonster01.psd" />
+    <None Include="Resources\NiceGuys\archer2.psd" />
+    <None Include="Resources\NiceGuys\icemage.psd" />
+    <None Include="Resources\NiceGuys\IceWitch.psd" />
+    <None Include="Resources\NiceGuys\ninja2.psd" />
+    <None Include="Resources\NiceGuys\RedKnight.psd" />
+    <None Include="Resources\NiceGuys\viking2.psd" />
+    <None Include="Resources\NiceGuys\witch.psd" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\Window.resx">
       <DependentUpon>Window.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Backgrounds\Eragon_Saphira.jpg" />
+    <Content Include="Resources\Backgrounds\Eragon_Saphira1.jpg" />
+    <Content Include="Resources\Backgrounds\Eragon_Saphira2.jpg" />
+    <Content Include="Resources\Backgrounds\Eragon_Saphira_by_Marko1991.jpg" />
+    <Content Include="Resources\Backgrounds\Gallery_GUI_Medieval1.jpg" />
+    <Content Include="Resources\Backgrounds\Gallery_Platform_Castle1.jpg" />
+    <Content Include="Resources\Backgrounds\Gallery_Platform_Castle2.jpg" />
+    <Content Include="Resources\Backgrounds\Gallery_Platform_Castle3.jpg" />
+    <Content Include="Resources\Backgrounds\Medieval_Castle_Zuh1.jpg" />
+    <Content Include="Resources\Backgrounds\Medieval_Castle_Zuh3.jpg" />
+    <Content Include="Resources\Backgrounds\Medieval_Castle_Zuh4.jpg" />
+    <Content Include="Resources\Backgrounds\Medieval_Castle_Zuh5.jpg" />
+    <Content Include="Resources\Backgrounds\Medieval_Weapons1.jpg" />
+    <Content Include="Resources\Backgrounds\Medieval_Weapons1_2.jpg" />
+    <Content Include="Resources\Backgrounds\preview_page002.jpg" />
+    <Content Include="Resources\Backgrounds\preview_page006.jpg" />
+    <Content Include="Resources\Backgrounds\product_platform2.jpg" />
+    <Content Include="Resources\Backgrounds\session_details2.jpg" />
+    <Content Include="Resources\Backgrounds\session_details3.jpg" />
+    <Content Include="Resources\BadGuys\AxeTrol.jpg" />
+    <Content Include="Resources\BadGuys\badmage.jpg" />
+    <Content Include="Resources\BadGuys\bat.png" />
+    <Content Include="Resources\BadGuys\BossCyclop.png" />
+    <Content Include="Resources\BadGuys\BossIceMonster01.png" />
+    <Content Include="Resources\BadGuys\BossTrol.jpg" />
+    <Content Include="Resources\BadGuys\SkeletArcher.jpg" />
+    <Content Include="Resources\BadGuys\SkeletKnight.jpg" />
+    <Content Include="Resources\BadGuys\TrolArcher.jpg" />
+    <Content Include="Resources\BadGuys\worm.png" />
+    <Content Include="Resources\Castles\208334.jpg" />
+    <Content Include="Resources\Castles\Ancient-Castle_1680x1050.jpg" />
+    <Content Include="Resources\Castles\castle-map01.jpg" />
+    <Content Include="Resources\Castles\castle-map02.JPG" />
+    <Content Include="Resources\Castles\Castle_Cousland_image.jpg" />
+    <Content Include="Resources\Castles\dragnorpcscrnhighdragonna05.jpg" />
+    <Content Include="Resources\Castles\DragonAge.jpg" />
+    <Content Include="Resources\Castles\welcome.jpg" />
+    <Content Include="Resources\NiceGuys\archer2.png" />
+    <Content Include="Resources\NiceGuys\icemage.png" />
+    <Content Include="Resources\NiceGuys\IceWitch.png" />
+    <Content Include="Resources\NiceGuys\ninja2.png" />
+    <Content Include="Resources\NiceGuys\RedKnight.png" />
+    <Content Include="Resources\NiceGuys\viking2.png" />
+    <Content Include="Resources\NiceGuys\witch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

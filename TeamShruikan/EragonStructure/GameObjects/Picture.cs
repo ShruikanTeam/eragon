@@ -6,7 +6,7 @@
     {
         public Picture(System.Drawing.Image img)
         {
-            this.Image = img;
+            Image = img;
         }
 
         public Size Size { get; set; }

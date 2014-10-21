@@ -82,6 +82,8 @@
         /// </summary>
         public int MaxHealthPoints { get; set; }
 
+        public int Mana { get; set; }
+
         /// <summary>
         /// Gets or sets the speed of the character
         /// </summary>

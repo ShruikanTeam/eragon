@@ -1,5 +1,6 @@
 ﻿namespace EragonStructure.GameObjects
 {
+    using System;
     using System.Collections.Generic;
 
     using EragonStructure.Enumerations;
@@ -20,7 +21,9 @@
 
         private PowerStats stats;
 
-        private ICollection<IInventory> equipment;
+        private ICollection<IInventoryItem> equipment;
+
+        private ICollection<IInventoryItem> stash; 
 
         #endregion
 
@@ -33,7 +36,8 @@
         /// <param name="size">The size of the player</param>
         /// <param name="picture">The image of the player</param>
         /// <param name="name">The name of the player</param>
-        protected Player(Point point, Size size, Picture picture, string name, int attack, int defence, int range, int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded)
+        protected Player(Point point, Size size, Picture picture, string name, int attack, int defence, int range, 
+            int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded)
             : base(point, size, picture, name, attack, defence, range, currentHealthPoints, maxHealthPoints, movementsSpeed)
         {
             
@@ -49,8 +53,8 @@
             this.Level = currentLevel;
             this.experienceNeeded = experienceNeeded;
 
-            SetPlayerStats();                     // Initializes default player stats 
-            this.EquipPlayer(this.Equipment);   // Add item stats to the player stats
+            this.SetPlayerStats();                     // Initializes default player stats 
+            this.AddItemsStats(this.equipment);   // Add item stats to the player stats
         }
 
         #endregion
@@ -126,11 +130,20 @@
         /// <summary>
         /// Gets or sets the items that player is equipped with.
         /// </summary>
-        public ICollection<IInventory> Equipment
+        public ICollection<IInventoryItem> Equipment
         {
             get { return this.equipment; }
             set { this.equipment = value; }
         }
+
+        /// <summary>
+        /// Gets or sets the player's items 
+        /// </summary>
+        public ICollection<IInventoryItem> Stash
+        {
+            get { return this.stash; }
+            set { this.equipment = value; }
+        } 
 
         /// <summary>
         /// Gets or sets the player stats (Attack, Defense, Range, Maximum health points and Movement speed).
@@ -189,69 +202,66 @@
                     this.Point = new Point(horizontalPosition, verticalPosition);
                     break;
             }
-
-            //    //Detect collission with game borders.
-            //    if (horizontalPosition < 16)
-            //    {
-            //        Settings.Direction = Direction.East;
-            //    }
-
-            //    if (verticalPosition < 32)
-            //    {
-            //        Settings.Direction = Direction.South;
-            //    }
-
-            //    if (horizontalPosition > - 16)
-            //    {
-            //        Settings.Direction = Direction.West;
-            //    }
-
-            //    if (verticalPosition >  -32)
-            //    {
-            //        Settings.Direction = Direction.North;
-            //    }
         }
 
         /// <summary>
         /// Actualizes the player stats based on the items he is equipped with
         /// </summary>
         /// <param name="playerEquipment">The set of items the player is equipped with.</param>
-        /// <param name="playerStats">The player current stats, without the equipment.</param>
         /// <returns>The actualized stats after the player has been equipped.</returns>
-        protected virtual void EquipPlayer(ICollection<IInventory> playerEquipment)
+        protected virtual void EquipPlayer(IInventoryItem item)
         {
-            if (playerEquipment == null) return;
-            foreach (var item in playerEquipment)
+            this.equipment.Add(item);
+        }
+
+        protected virtual void UnequipPlayer(IInventoryItem item )
+        {
+            if (!this.equipment.Contains(item))
             {
-                stats.Attack += item.Stats.Attack;
-                stats.Defense += item.Stats.Defense;
-                stats.Range += item.Stats.Range;
-                stats.MaximumHealth += item.Stats.MaximumHealth;
-                stats.MovementSpeed += item.Stats.MovementSpeed;
+                throw new ArgumentNullException("item", "Item is not in the player equipment");
             }
+            
+            this.equipment.Remove(item);
+
+            //foreach (var stat in playerEquipment)
+            //{
+            //    // Will uncomment when items stats are implemented 
+            //    this.stats.Attack -= item.Stats.Attack;
+            //    this.stats.Defense -= item.Stats.Defense;
+            //    this.stats.Range -= item.Stats.Range;
+            //    this.stats.MaximumHealth -= item.Stats.MaximumHealth;
+            //    this.stats.MovementSpeed -= item.Stats.MovementSpeed;
+            //}
         }
 
         /// <summary>
         /// Sets the initial player stats.
         /// </summary>
-        /// <param name="stats">Initial player stats.</param>
         /// <returns>Returns actualized initial player stats.</returns>
         protected PowerStats SetPlayerStats()
         {
-            stats.Attack += this.Attack;
-            stats.Defense += this.Defense;
-            stats.Range += this.Range;
-            stats.CurrentHealth += this.CurrentHealthPoints;
-            stats.MaximumHealth += this.MaxHealthPoints;
+            this.stats.Attack += this.Attack;
+            this.stats.Defense += this.Defense;
+            this.stats.Range += this.Range;
+            this.stats.CurrentHealth += this.CurrentHealthPoints;
+            this.stats.MaximumHealth += this.MaxHealthPoints;
 
-            return stats;
+            return this.stats;
         }
 
-        #endregion
-
-        /*public void Draw(System.Drawing.Graphics g)
+        private void AddItemsStats(ICollection<IInventoryItem> equipment)
         {
-            g.DrawImage(Picture.Image, this.Point.X, this.Point.Y);
-        }*/
+            //foreach (var stat in playerEquipment)
+            //{
+            //    // Will uncomment when items stats are implemented 
+            //    this.stats.Attack += item.Stats.Attack;
+            //    this.stats.Defense += item.Stats.Defense;
+            //    this.stats.Range += item.Stats.Range;
+            //    this.stats.MaximumHealth += item.Stats.MaximumHealth;
+            //    this.stats.MovementSpeed += item.Stats.MovementSpeed;
+            //}
+        }
+        
+        #endregion
     }
 }

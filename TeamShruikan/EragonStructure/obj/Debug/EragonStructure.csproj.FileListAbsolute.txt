@@ -19,3 +19,10 @@ D:\Git\eragon\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.pdb
 D:\Git\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
 D:\Git\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.UI.Window.resources
 D:\Git\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csproj.GenerateResource.Cache
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.pdb
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.UI.Window.resources
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csproj.GenerateResource.Cache
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.exe
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.pdb
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.exe

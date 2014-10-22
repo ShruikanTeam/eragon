@@ -26,6 +26,12 @@
 
         private ICollection<IInventoryItem> stash;
 
+        private IInventoryItem attackItem;
+
+        private IInventoryItem defenseItem;
+
+        private bool imageOriantation;
+
         #endregion
 
         #region Constructors
@@ -38,7 +44,7 @@
         /// <param name="picture">The image of the player</param>
         /// <param name="name">The name of the player</param>
         protected Player(Point point, Size size, Picture picture, string name, int attack, int defence, int range,
-            int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded)
+            int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded, bool imgDir)
             : base(point, size, picture, name, attack, defence, range, currentHealthPoints, maxHealthPoints, movementsSpeed)
         {
             this.Attack = 50;
@@ -48,14 +54,23 @@
             this.MaxHealthPoints = 100;
             this.MovementSpeed = 5;
             this.CurrentExperience = 0;
-
+            this.imageOriantation = imgDir;
             this.Money = 50m;
             this.Level = currentLevel;
             this.experienceNeeded = experienceNeeded;
+            if (this.attackItem != null)
+            {
+                this.Attack += this.AttackItem.Value;    
+            }
 
+            if (this.DefenseItem != null)
+            {
+                this.Defense += this.DefenseItem.Value;   
+            }
+            
             // this.Equipment = new List<IInventoryItem>();
-            this.SetPlayerStats();                     // Initializes default player stats 
-            this.AddItemsStats(this.equipment);   // Add item stats to the player stats
+            // this.SetPlayerStats();                     // Initializes default player stats 
+            // this.AddItemsStats(this.equipment);   // Add item stats to the player stats
         }
 
         #endregion
@@ -128,15 +143,13 @@
         /// </summary>
         public decimal Money { get; set; }
 
-<<<<<<< HEAD
         /// <summary>
         /// Gets or sets the items that player is equipped with.
         /// </summary>
-=======
+
         ///// <summary>
         ///// Gets or sets the items that player is equipped with.
         ///// </summary>
->>>>>>> 56ade9c68651a66d89efdb9b7a044571f18ac863
         //public ICollection<IInventoryItem> Equipment
         //{
         //    get
@@ -168,6 +181,32 @@
         {
             get { return this.stats; }
             set { this.stats = value; }
+        }
+
+        public IInventoryItem AttackItem
+        {
+            get
+            {
+                return this.attackItem;
+            }
+
+            set
+            {
+                this.attackItem = value;
+            }
+        }
+
+        public IInventoryItem DefenseItem
+        {
+            get
+            {
+                return this.defenseItem;
+            }
+
+            set
+            {
+                this.defenseItem = value;
+            }
         }
 
         #endregion
@@ -291,15 +330,11 @@
 
         private void AddItemsStats(ICollection<IInventoryItem> equipment)
         {
-            //foreach (var stat in playerEquipment)
-            //{
-            //    // Will uncomment when items stats are implemented 
-            //    this.stats.Attack += item.Stats.Attack;
-            //    this.stats.Defense += item.Stats.Defense;
-            //    this.stats.Range += item.Stats.Range;
-            //    this.stats.MaximumHealth += item.Stats.MaximumHealth;
-            //    this.stats.MovementSpeed += item.Stats.MovementSpeed;
-            //}
+            foreach (var item in equipment)
+            {
+                this.Attack += item.Value;
+                this.Defense += item.Value;
+            }
         }
 
         #endregion

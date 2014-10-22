@@ -9,7 +9,6 @@
         /// </summary>
         //decimal Money { get; set; }
 
-<<<<<<< HEAD
         /// <summary>
         /// Gets or sets the items that a character can carry
         /// </summary>
@@ -18,7 +17,6 @@
         /// <summary>
         /// Gets or sets the items the player is equipped with
         /// </summary>
-=======
         ///// <summary>
         ///// Gets or sets the items that a character can carry
         ///// </summary>
@@ -27,7 +25,6 @@
         ///// <summary>
         ///// Gets or sets the items the player is equipped with
         ///// </summary>
->>>>>>> 56ade9c68651a66d89efdb9b7a044571f18ac863
         //ICollection<IInventoryItem> Equipment { get; set; } 
     }
 }

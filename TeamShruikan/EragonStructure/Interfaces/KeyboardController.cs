@@ -4,9 +4,13 @@
     using System.Windows.Forms;
 
     using EragonStructure.GameObjects;
+    using System.Runtime.InteropServices;
 
     public class KeyboardController : IUserInput
     {
+        [DllImport("user32")]
+        static extern short GetAsyncKeyState(Keys vKey);
+
         public event EventHandler OnRightPressed;
         public event EventHandler OnLeftPressed;
         public event EventHandler OnUpPressed;
@@ -15,8 +19,41 @@
 
         public KeyboardController(Form form)
         {
-            form.KeyDown += FormKeyDown;
+            //form.KeyDown += FormKeyDown;
+            //form.KeyDown += CheckKeyInput;
             form.MouseClick += MouseClick;
+        }
+
+        public void CheckKeyInput()
+        {
+            if (GetAsyncKeyState(Keys.Left) < 0)
+            {
+                if (this.OnLeftPressed != null)
+                {
+                    this.OnLeftPressed(this, new EventArgs());
+                }
+            }
+            if (GetAsyncKeyState(Keys.Right) < 0)
+            {
+                if (this.OnRightPressed != null)
+                {
+                    this.OnRightPressed(this, new EventArgs());
+                }
+            }
+            if (GetAsyncKeyState(Keys.Up) < 0)
+            {
+                if (this.OnUpPressed != null)
+                {
+                    this.OnUpPressed(this, new EventArgs());
+                }
+            }
+            if (GetAsyncKeyState(Keys.Down) < 0)
+            {
+                if (this.OnDownPressed != null)
+                {
+                    this.OnDownPressed(this, new EventArgs());
+                }
+            }
         }
 
         private void MouseClick(object sender, MouseEventArgs e)
@@ -65,8 +102,6 @@
                     {
                         //this.OnSpacePressed(this, new CharacterAttackEventArgs(e.X, e.Y));
                     }
-                    break;
-                default:
                     break;
             }
         }

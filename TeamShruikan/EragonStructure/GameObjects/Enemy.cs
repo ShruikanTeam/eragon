@@ -23,6 +23,31 @@
         /// </summary>
         public Direction Direction { get; set; }
 
+        protected IInventoryItem DropItem()
+        {
+            Random genRandom = new Random();
+            int gen = genRandom.Next();
+            var itemType = gen % 2 == 0 ? typeof(BasicAttackItemNames) : typeof(Defence);    
+            Array values = Enum.GetValues(itemType);
+            Random rand = new Random();
+
+            if (itemType == typeof(BasicAttackItemNames))
+            {
+                BasicAttackItemNames itemRand = (BasicAttackItemNames)values.GetValue(rand.Next(values.Length));
+                BasicAttack item = new BasicAttack(itemRand);
+
+                return item;
+            }
+            else
+            {
+                Defence itemRand = (Defence)values.GetValue(rand.Next(values.Length));
+                DeffenseInventoryItem item = new BasicDefence(itemRand);
+
+                return item;
+            }
+            
+        }
+
         public void Move()
         {
             throw new NotImplementedException();

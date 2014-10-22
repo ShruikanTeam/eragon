@@ -3,32 +3,15 @@
 using System;
     public abstract class AttackInventoryItem : InventoryItem
     {
-        private decimal range;
-        private decimal attackValue;
-        // range of the attack
-        public decimal Range
-        {
-            get
-            {
-                return this.range;
-            }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Range cannot be negative value");
-                }
 
-                this.range = value;
-            }
-        }
+        private decimal attackValue;
 
         // value of the attack
         public decimal AttackValue
         {
             get
             {
-                return this.range;
+                return this.attackValue;
             }
             set
             {
@@ -36,7 +19,7 @@ using System;
                 {
                     throw new ArgumentOutOfRangeException("Attack value cannot be negative value");
                 }
-                this.range = value;
+                this.attackValue = value;
             }
         }
 

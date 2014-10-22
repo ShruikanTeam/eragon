@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Net.Configuration;
 
     using EragonStructure.Enumerations;
     using EragonStructure.Structs;
@@ -11,7 +13,7 @@
     /// </summary>
     public abstract class Player : Creature, IPlayer, ILevelUp, IMovable, IDrawable
     {
-        #region Fields 
+        #region Fields
 
         private int level = 1;
 
@@ -23,7 +25,13 @@
 
         private ICollection<IInventoryItem> equipment;
 
-        private ICollection<IInventoryItem> stash; 
+        private ICollection<IInventoryItem> stash;
+
+        private bool imageDirection;
+
+        private BasicAttack attackItem;
+
+        private BasicDefence defenseItem;
 
         #endregion
 
@@ -36,11 +44,10 @@
         /// <param name="size">The size of the player</param>
         /// <param name="picture">The image of the player</param>
         /// <param name="name">The name of the player</param>
-        protected Player(Point point, Size size, Picture picture, string name, int attack, int defence, int range, 
-            int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded)
+        protected Player(Point point, Size size, Picture picture, string name, int attack, int defence, int range,
+            int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded, bool imgDir)
             : base(point, size, picture, name, attack, defence, range, currentHealthPoints, maxHealthPoints, movementsSpeed)
         {
-            
             this.Attack = 50;
             this.Defense = 50;
             this.Range = 1;
@@ -48,13 +55,22 @@
             this.MaxHealthPoints = 100;
             this.MovementSpeed = 5;
             this.CurrentExperience = 0;
-            
+            this.imageDirection = imgDir;
             this.Money = 50m;
             this.Level = currentLevel;
             this.experienceNeeded = experienceNeeded;
+            if (this.defenseItem != null)
+            {
+                this.Defense += this.defenseItem.Value;
+            }
 
-            this.SetPlayerStats();                     // Initializes default player stats 
-            this.AddItemsStats(this.equipment);   // Add item stats to the player stats
+            if (this.attackItem != null)
+            {
+                this.Attack += this.attackItem.Value;
+            }
+            // this.Equipment = new List<IInventoryItem>();
+            // this.SetPlayerStats();                     // Initializes default player stats 
+            // this.AddItemsStats(this.equipment);   // Add item stats to the player stats
         }
 
         #endregion
@@ -126,16 +142,28 @@
         /// Gets or sets the amount of money of the current player
         /// </summary>
         public decimal Money { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the items that player is equipped with.
         /// </summary>
-        public ICollection<IInventoryItem> Equipment
-        {
-            get { return this.equipment; }
-            set { this.equipment = value; }
-        }
+        ///// <summary>
+        ///// Gets or sets the items that player is equipped with.
+        ///// </summary>
 
+        //public ICollection<IInventoryItem> Equipment
+        //{
+        //    get
+        //    {
+        //        return this.equipment;
+        //    }
+
+        //    set
+        //    {
+        //        this.equipment = new List<IInventoryItem>(this.equipment);
+        //    }
+        //}
+
+        /*
         /// <summary>
         /// Gets or sets the player's items 
         /// </summary>
@@ -143,7 +171,8 @@
         {
             get { return this.stash; }
             set { this.equipment = value; }
-        } 
+        }
+        */
 
         /// <summary>
         /// Gets or sets the player stats (Attack, Defense, Range, Maximum health points and Movement speed).
@@ -166,7 +195,7 @@
         {
             this.CurrentExperience += experienceToAdd;
         }
-        
+
         public override void AttackEnemies(ICreature enemyCreature)
         {
             int damageDealed = this.Attack - enemyCreature.Defense;
@@ -205,22 +234,46 @@
         }
 
         /// <summary>
-        /// Actualizes the player stats based on the items he is equipped with
+        /// Equip player with new collected items 
         /// </summary>
-        /// <param name="playerEquipment">The set of items the player is equipped with.</param>
-        /// <returns>The actualized stats after the player has been equipped.</returns>
+        /// <param name="item">The set of items the player is equipped with.</param>
         protected virtual void EquipPlayer(IInventoryItem item)
         {
-            this.equipment.Add(item);
+            var itemInInventory = this.equipment.Any(i => i.Name.Equals(item.Name));
+
+            if (itemInInventory)
+            {
+                var equipedItem = this.equipment.First(i => i.Name.Equals(item.Name));
+                this.ChooseItemToEquip(item, equipedItem);
+            }
+            else
+            {
+                this.equipment.Add(item);
+            }
         }
 
-        protected virtual void UnequipPlayer(IInventoryItem item )
+        /// <summary>
+        /// Let the player choose to keep the item that he already posses or to equip the new item
+        /// </summary>
+        /// <param name="newItem">The new collected item</param>
+        /// <param name="oldItem">The old already equipped item</param>
+        private void ChooseItemToEquip(IInventoryItem newItem, IInventoryItem oldItem)
+        {
+            // TODO Decide how the player chooses item to equip
+            if (true)
+            {
+                this.equipment.Remove(oldItem);
+                this.equipment.Add(newItem);
+            }
+        }
+
+        protected virtual void UnequipPlayer(IInventoryItem item)
         {
             if (!this.equipment.Contains(item))
             {
                 throw new ArgumentNullException("item", "Item is not in the player equipment");
             }
-            
+
             this.equipment.Remove(item);
 
             //foreach (var stat in playerEquipment)
@@ -261,7 +314,7 @@
             //    this.stats.MovementSpeed += item.Stats.MovementSpeed;
             //}
         }
-        
+
         #endregion
     }
 }

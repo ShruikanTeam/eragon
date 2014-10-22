@@ -7,16 +7,27 @@
         /// <summary>
         /// Gets or sets the money of the player
         /// </summary>
-        decimal Money { get; set; }
+        //decimal Money { get; set; }
+
 
         /// <summary>
         /// Gets or sets the items that a character can carry
         /// </summary>
-        ICollection<IInventoryItem> Stash { get; set; }
+        //ICollection<IInventoryItem> Stash { get; set; }
 
         /// <summary>
         /// Gets or sets the items the player is equipped with
         /// </summary>
-        ICollection<IInventoryItem> Equipment { get; set; } 
+
+        ///// <summary>
+        ///// Gets or sets the items that a character can carry
+        ///// </summary>
+        //ICollection<IInventoryItem> Stash { get; set; }
+
+        ///// <summary>
+        ///// Gets or sets the items the player is equipped with
+        ///// </summary>
+
+        //ICollection<IInventoryItem> Equipment { get; set; } 
     }
 }

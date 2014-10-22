@@ -9,5 +9,7 @@
             this.Name = item.ToString();
             this.DeffenseValue = (int)item;
         }
+
+        
     }
 }

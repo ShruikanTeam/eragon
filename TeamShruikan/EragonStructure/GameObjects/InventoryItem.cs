@@ -1,5 +1,6 @@
 ﻿namespace EragonStructure.GameObjects
 {
+    using System;
     public abstract class InventoryItem : IInventoryItem
     {
         public string Name

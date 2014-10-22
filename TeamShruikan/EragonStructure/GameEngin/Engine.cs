@@ -33,13 +33,13 @@ namespace EragonStructure.GameEngin
         private void InitializeCharacters()
         {
             player = new Fighter(new Structs.Point(100, 350),
-                new EragonStructure.Structs.Size(100, 100),
+                new EragonStructure.Structs.Size(painter.HeroPicture.Size.Width, painter.HeroPicture.Size.Height),
                 painter.HeroPicture,
                 "Archo",
                 90, 120, 10, 100, 200, 10, 1, 10);
             creatures.Add(player);
             creatures.Add(new Creep(new Structs.Point(400, 150),
-                new EragonStructure.Structs.Size(100, 100),
+                new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
                 painter.CreepPicture,
                 "creep",
                 90, 120, 10, 60, 100, 3));
@@ -48,7 +48,24 @@ namespace EragonStructure.GameEngin
         public void Play()
         {
             controller.CheckKeyInput();
+            DetectColision();
             RedrawAll();    
+        }
+
+        private void DetectColision()
+        {
+            Rectangle playerRect = new Rectangle(player.Point.X, player.Point.Y, player.Size.Width, player.Size.Height);
+            foreach (var creature in creatures)
+            {
+                if (creature is Enemy)
+                {
+                    Rectangle enemyRect = new Rectangle(creature.Point.X, creature.Point.Y, creature.Size.Width, creature.Size.Height);
+                    if (playerRect.IntersectsWith(enemyRect))
+                    {
+                        painter.Window.Text = "battle!!!";
+                    }
+                }
+            }
         }
 
         private void RedrawAll()

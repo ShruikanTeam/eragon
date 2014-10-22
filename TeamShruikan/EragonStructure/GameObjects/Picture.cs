@@ -4,7 +4,7 @@
 
     public class Picture
     {
-        public Picture(System.Drawing.Image img)
+        public Picture(System.Drawing.Bitmap img)
         {
             Image = img;
             this.Size = new EragonStructure.Structs.Size(Image.Width, Image.Height);
@@ -12,7 +12,7 @@
 
         public Size Size { get; set; }
 
-        public System.Drawing.Image Image { get; set; }
+        public System.Drawing.Bitmap Image { get; set; }
 
         public int SpriteColumns { get; set; }
 

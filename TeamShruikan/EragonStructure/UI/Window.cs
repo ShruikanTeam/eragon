@@ -21,12 +21,6 @@ namespace EragonStructure.UI
 {
     public partial class Window : Form
     {
-        [DllImport("user32")]
-        static extern short GetAsyncKeyState(Keys vKey);
-
-        [DllImport("User32.dll")]
-        private static extern short GetAsyncKeyState(System.Int32 vKey);
-
         public const int TimeInterval = 30;
         //private Bitmap backBuffer;
         private Painter painter;
@@ -62,67 +56,8 @@ namespace EragonStructure.UI
             }
         }
 
-        private void CheckKeyInput()
-        {
-            if (GetAsyncKeyState(Keys.Left) < 0)
-            {
-                hero.Direction = Direction.West;
-                hero.Move();
-            }
-            if (GetAsyncKeyState(Keys.Right) < 0)
-            {
-                hero.Direction = Direction.East;
-                hero.Move();
-            }
-            if (GetAsyncKeyState(Keys.Up) < 0)
-            {
-                hero.Direction = Direction.North;
-                hero.Move();
-            }
-            if (GetAsyncKeyState(Keys.Down) < 0)
-            {
-                hero.Direction = Direction.South;
-                hero.Move();
-            }
-
-            //Sample detecting collision with enemy
-            if (hero.Point.X.Equals(creep.Point.X + creep.Size.Width / 2) && hero.Point.Y.Equals(creep.Point.Y)
-                || hero.Point.X.Equals(creep.Point.X) && hero.Point.Y.Equals(creep.Size.Height / 2)
-                || hero.Point.X.Equals(creep.Point.X) && hero.Point.Y.Equals(creep.Point.Y + creep.Size.Height / 2))
-            {
-                DialogResult message = MessageBox.Show("Are you sure you want to fight?",
-                      "Fight ahead!", MessageBoxButtons.YesNo);
-                switch (message)
-                {
-                    case DialogResult.Yes: break;
-                    case DialogResult.No: break;
-                }
-            }
-            //Point[] creepPos = {
-            //    new Point (creep.Point.X + 50, creep.Point.Y),
-            //    new Point (creep.Point.X, creep.Point.Y + 50)
-            //    };
-
-            //for (int i = 0; i < creepPos.Length; i++)
-            //{
-            //    if (hero.Point.Equals(creepPos[i]))
-            //    {
-            //        DialogResult message = MessageBox.Show("Are you sure you want to fight?",
-            //          "Fight ahead!", MessageBoxButtons.YesNo);
-            //        switch (message)
-            //        {
-            //            case DialogResult.Yes: break;
-            //            case DialogResult.No: break;
-            //        }
-
-            //    }
-            //}
-        }
-
         public void UpdateScreen()
         {
-            CheckKeyInput();
-
             //if (backBuffer != null)
             //{
             //    using (var g = Graphics.FromImage(backBuffer))

@@ -51,7 +51,7 @@ namespace EragonStructure.UI
             string resPath = Directory.GetCurrentDirectory() + @"..\..\..\Resources\";
             try
             {
-                backGround = new Picture(new Bitmap(Image.FromFile(resPath + @"Backgrounds\Eragon_Saphira.jpg"), new System.Drawing.Size(window.Width, window.Height)));
+                backGround = new Picture(new Bitmap(Image.FromFile(resPath + @"Castles\castlemap01.jpg"), new System.Drawing.Size(window.Width, window.Height)));
                 heroPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"NiceGuys\archer2.png"), new System.Drawing.Size(80, 100)));
                 creepPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"BadGuys\BossIceMonster01.png"), new System.Drawing.Size(100, 100)));
             }

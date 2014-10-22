@@ -63,6 +63,15 @@ namespace EragonStructure.GameEngin
                     RedrawAll();
                     break;
                 case "battle":
+                    State = "menu";
+                    DialogResult message = MessageBox.Show("Are you sure you want to fight?",
+                      "Fight ahead!", MessageBoxButtons.YesNo);
+                switch (message)
+                {
+                    case DialogResult.Yes: break;
+                    case DialogResult.No: break;
+                }
+                    
                     break;
                 case "menu":
                     break;
@@ -112,6 +121,7 @@ namespace EragonStructure.GameEngin
 
         private void MovePlayerRight()
         {
+            player.Picture.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
             player.Direction = Direction.East;
             player.Move();
         }

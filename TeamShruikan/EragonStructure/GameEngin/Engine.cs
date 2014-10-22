@@ -44,7 +44,7 @@ namespace EragonStructure.GameEngin
                 new EragonStructure.Structs.Size(painter.HeroPicture.Size.Width, painter.HeroPicture.Size.Height),
                 painter.HeroPicture,
                 "Archo",
-                90, 120, 10, 100, 200, 10, 1, 10);
+                90, 120, 10, 100, 200, 10, 1, 10, true);
             creatures.Add(player);
             creatures.Add(new Creep(new Structs.Point(400, 150),
                 new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),

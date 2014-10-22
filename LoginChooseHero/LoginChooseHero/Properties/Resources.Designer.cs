@@ -60,9 +60,107 @@ namespace LoginChooseHero.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Archer {
+            get {
+                object obj = ResourceManager.GetObject("Archer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btnGoldBig {
+            get {
+                object obj = ResourceManager.GetObject("btnGoldBig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btnGoldSmall {
+            get {
+                object obj = ResourceManager.GetObject("btnGoldSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btnGoldSmall1 {
+            get {
+                object obj = ResourceManager.GetObject("btnGoldSmall1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap CastleAtSea {
+            get {
+                object obj = ResourceManager.GetObject("CastleAtSea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap CastleInClouds {
             get {
                 object obj = ResourceManager.GetObject("CastleInClouds", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap CastleInClouds1 {
+            get {
+                object obj = ResourceManager.GetObject("CastleInClouds1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap IceMage {
+            get {
+                object obj = ResourceManager.GetObject("IceMage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap IceWitch {
+            get {
+                object obj = ResourceManager.GetObject("IceWitch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Ninja {
+            get {
+                object obj = ResourceManager.GetObject("Ninja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap RedKnight {
+            get {
+                object obj = ResourceManager.GetObject("RedKnight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Viking {
+            get {
+                object obj = ResourceManager.GetObject("Viking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap winterCastle {
+            get {
+                object obj = ResourceManager.GetObject("winterCastle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap winterCastle02 {
+            get {
+                object obj = ResourceManager.GetObject("winterCastle02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap winterCastle1 {
+            get {
+                object obj = ResourceManager.GetObject("winterCastle1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

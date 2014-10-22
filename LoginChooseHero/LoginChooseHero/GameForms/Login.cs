@@ -1,4 +1,4 @@
-﻿namespace LoginChooseHero
+﻿namespace LoginChooseHero.GameForms
 {
     using System;
     using System.Collections.Generic;
@@ -42,12 +42,13 @@
             //    }
             //    else
             //    {
-            //        Registration form = new Registration(this.txtUserName.Text.ToString().Trim());
-            //        form.Show();
-            //    }
+                    HeroChoice form = new HeroChoice(); 
+            //(this.txtUserName.Text.ToString().Trim());
+                    form.Show();
+               // }
 
 
-            //    this.Hide();
+                this.Hide();
 
             }
 
@@ -56,23 +57,24 @@
 
         //private void btnRegister_Click(object sender, EventArgs e)
         //{
-            //if (Files.ReadUsersFromFile(this.txtUserName.Text, this.txtPassword.Text))
-            //{
-            //    this.lblErrorMessage.Text = "This user already exists";
-            //}
-            //else
-            //{
-            //    this.lblErrorMessage.Text = Validation.IsCorrectLogin(this.txtUserName.Text.ToString(), this.txtPassword.Text.ToString());
-            //    if (this.lblErrorMessage.Text.Trim() == "")
-            //    {
-            //        Files.CreateUser(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-            //        this.lblErrorMessage.Text = "You have been registered! You may login !";
-            //    }
+        //    if (Files.ReadUsersFromFile(this.txtUserName.Text, this.txtPassword.Text))
+        //    {
+        //        this.lblErrorMessage.Text = "This user already exists";
+        //    }
+        //    else
+        //    {
+        //        this.lblErrorMessage.Text = Validation.IsCorrectLogin(this.txtUserName.Text.ToString(), this.txtPassword.Text.ToString());
+        //        if (this.lblErrorMessage.Text.Trim() == "")
+        //        {
+        //            Files.CreateUser(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+        //            this.lblErrorMessage.Text = "You have been registered! You may login !";
+        //        }
 
-            //}
+        //    }
 
-            ////Registration registration = new Registration();
-            ////registration.Show();
-            ////this.Hide();
-        //}
+            //Registration registration = new Registration();
+            //registration.Show();
+            //this.Hide();
+       // }
+   // }
 }

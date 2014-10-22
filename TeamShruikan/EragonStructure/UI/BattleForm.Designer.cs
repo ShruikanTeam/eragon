@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BattleForm));
-=======
->>>>>>> 370c6b90c48bbb849ab2d20bb14c156c7d1c84a2
             this.attackBtn = new System.Windows.Forms.Button();
             this.chanceBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -59,11 +56,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-=======
->>>>>>> 370c6b90c48bbb849ab2d20bb14c156c7d1c84a2
             this.ClientSize = new System.Drawing.Size(884, 512);
             this.Controls.Add(this.chanceBtn);
             this.Controls.Add(this.attackBtn);

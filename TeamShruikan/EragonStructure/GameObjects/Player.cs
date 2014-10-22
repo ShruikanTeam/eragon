@@ -53,7 +53,7 @@
             this.Level = currentLevel;
             this.experienceNeeded = experienceNeeded;
 
-            this.Equipment = new List<IInventoryItem>();
+            // this.Equipment = new List<IInventoryItem>();
             this.SetPlayerStats();                     // Initializes default player stats 
             this.AddItemsStats(this.equipment);   // Add item stats to the player stats
         }
@@ -128,9 +128,15 @@
         /// </summary>
         public decimal Money { get; set; }
 
+<<<<<<< HEAD
         /// <summary>
         /// Gets or sets the items that player is equipped with.
         /// </summary>
+=======
+        ///// <summary>
+        ///// Gets or sets the items that player is equipped with.
+        ///// </summary>
+>>>>>>> 56ade9c68651a66d89efdb9b7a044571f18ac863
         //public ICollection<IInventoryItem> Equipment
         //{
         //    get
@@ -297,14 +303,5 @@
         }
 
         #endregion
-		
-		 //   Array values = Enum.GetValues(typeof(BasicAttackItemNames));
-         //   Random rand = new Random();
-         //   BasicAttackItemNames itemRand = (BasicAttackItemNames)values.GetValue(rand.Next(values.Length));
-
-         //   BasicAttack item = new BasicAttack(BasicAttackItemNames.GoldenBow);
-            
-         //   Console.WriteLine(item.AttackValue);
-         //   Console.WriteLine(item.Name);   
     }
 }

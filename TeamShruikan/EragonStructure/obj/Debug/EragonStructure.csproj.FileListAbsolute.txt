@@ -19,6 +19,7 @@ D:\Git\eragon\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.pdb
 D:\Git\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
 D:\Git\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.UI.Window.resources
 D:\Git\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 E:\BIO\SoftUni\02 OOP\eragon\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.pdb
 E:\BIO\SoftUni\02 OOP\eragon\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
 E:\BIO\SoftUni\02 OOP\eragon\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.UI.Window.resources
@@ -26,3 +27,12 @@ E:\BIO\SoftUni\02 OOP\eragon\eragon\TeamShruikan\EragonStructure\obj\Debug\Erago
 E:\BIO\SoftUni\02 OOP\eragon\eragon\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.exe
 E:\BIO\SoftUni\02 OOP\eragon\eragon\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.pdb
 E:\BIO\SoftUni\02 OOP\eragon\eragon\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.exe
+=======
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.pdb
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csprojResolveAssemblyReference.cache
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.UI.Window.resources
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.csproj.GenerateResource.Cache
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.exe
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\bin\Debug\EragonStructure.pdb
+D:\Pecata\Documents\Programming\OOP-TeamEragon\trunk\TeamShruikan\EragonStructure\obj\Debug\EragonStructure.exe
+>>>>>>> 56ade9c68651a66d89efdb9b7a044571f18ac863

@@ -52,6 +52,7 @@
     <Compile Include="GameLauncher.cs" />
     <Compile Include="GameObjects\AdditionalItem.cs" />
     <Compile Include="GameObjects\AttackInventoryItem.cs" />
+    <Compile Include="GameObjects\BasicDefence.cs" />
     <Compile Include="GameObjects\Boss.cs" />
     <Compile Include="GameObjects\Character.cs" />
     <Compile Include="GameObjects\CharacterAttackEventArgs.cs" />
@@ -95,6 +96,7 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
     <None Include="Resources\BadGuys\bat.psd" />
     <None Include="Resources\BadGuys\BossCyclop.psd" />
     <None Include="Resources\BadGuys\BossIceMonster01.psd" />

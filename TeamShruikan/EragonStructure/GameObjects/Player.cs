@@ -131,18 +131,18 @@
         /// <summary>
         /// Gets or sets the items that player is equipped with.
         /// </summary>
-        public ICollection<IInventoryItem> Equipment
-        {
-            get
-            {
-                return this.equipment;
-            }
+        //public ICollection<IInventoryItem> Equipment
+        //{
+        //    get
+        //    {
+        //        return this.equipment;
+        //    }
 
-            set
-            {
-                this.equipment = new List<IInventoryItem>(this.equipment);
-            }
-        }
+        //    set
+        //    {
+        //        this.equipment = new List<IInventoryItem>(this.equipment);
+        //    }
+        //}
 
         /*
         /// <summary>

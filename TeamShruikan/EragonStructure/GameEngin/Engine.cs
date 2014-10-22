@@ -18,6 +18,13 @@ namespace EragonStructure.GameEngin
         private List<GameObject> creatures;
         private Player player;
         private KeyboardController controller;
+        private string state;
+
+        public string State
+        {
+            get { return state; }
+            set { state = value; }
+        }
 
         private Painter painter;
 
@@ -28,6 +35,7 @@ namespace EragonStructure.GameEngin
             SubscribeToUserInput(controller);
             creatures = new List<GameObject>();
             InitializeCharacters();
+            State = "map";
         }
 
         private void InitializeCharacters()
@@ -47,9 +55,21 @@ namespace EragonStructure.GameEngin
 
         public void Play()
         {
-            controller.CheckKeyInput();
-            DetectColision();
-            RedrawAll();    
+            switch (State)
+            {
+                case "map":
+                    controller.CheckKeyInput();
+                    DetectColision();
+                    RedrawAll();
+                    break;
+                case "battle":
+                    break;
+                case "menu":
+                    break;
+                case "gameOver":
+                    break;
+            }
+
         }
 
         private void DetectColision()
@@ -63,6 +83,7 @@ namespace EragonStructure.GameEngin
                     if (playerRect.IntersectsWith(enemyRect))
                     {
                         painter.Window.Text = "battle!!!";
+                        State = "battle";
                     }
                 }
             }

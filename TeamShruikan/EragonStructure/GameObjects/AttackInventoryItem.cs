@@ -4,12 +4,6 @@ using System;
     public abstract class AttackInventoryItem : InventoryItem
     {
 
-        public string Name
-        {
-            get;
-            set;
-        }
-
         private decimal attackValue;
 
         // value of the attack

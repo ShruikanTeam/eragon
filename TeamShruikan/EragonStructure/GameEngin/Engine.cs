@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EragonStructure.GameObjects;
 using EragonStructure.Interfaces;
+using EragonStructure.Structs;
 using EragonStructure.UI;
 using EragonStructure.Enumerations;
 
@@ -15,8 +16,9 @@ namespace EragonStructure.GameEngin
 {
     public class Engine
     {
-        private List<GameObject> creatures;
+        private List<Creature> creatures;
         private Player player;
+        private Creature enemy;
         private KeyboardController controller;
         private string state;
 
@@ -33,7 +35,7 @@ namespace EragonStructure.GameEngin
             this.painter = painter;
             this.controller = controller;
             SubscribeToUserInput(controller);
-            creatures = new List<GameObject>();
+            creatures = new List<Creature>();
             InitializeCharacters();
             State = "map";
         }
@@ -63,19 +65,38 @@ namespace EragonStructure.GameEngin
                     RedrawAll();
                     break;
                 case "battle":
-                    State = "menu";
-                    DialogResult message = MessageBox.Show("Are you sure you want to fight?",
+                    if (painter.Window.Visible)
+                    {
+                        painter.Window.Visible = false;
+                        BattleForm formBattle = new BattleForm();
+                        formBattle.ShowDialog();
+                        MessageBox.Show("Are you sure you want to fight?",
                       "Fight ahead!", MessageBoxButtons.YesNo);
-                switch (message)
-                {
-                    case DialogResult.Yes: break;
-                    case DialogResult.No: break;
-                }
-                    
+                        painter.Window.Text = "v cikala sme";
+                        //State = "idle";
+                        formBattle.Dispose();
+                    }
                     break;
                 case "menu":
                     break;
-                case "gameOver":
+                case "idle":
+                    break;
+                case "askBattle":
+                    State = "menu";
+                    DialogResult message = MessageBox.Show("Are you sure you want to fight?",
+                      "Fight ahead!", MessageBoxButtons.YesNo);
+                            switch (message)
+                            {
+                                case DialogResult.Yes:
+                                    State = "battle";
+                                    break;
+                                case DialogResult.No:
+                                    int directionOffset = player.Point.X.CompareTo(enemy.Point.X);
+                                    player.Point = new EragonStructure.Structs.Point(player.Point.X + directionOffset * (int)(player.Size.Width * 0.5), player.Point.Y);
+                                    
+                                    State = "map";
+                                    break;
+                            }
                     break;
             }
 
@@ -92,7 +113,8 @@ namespace EragonStructure.GameEngin
                     if (playerRect.IntersectsWith(enemyRect))
                     {
                         painter.Window.Text = "battle!!!";
-                        State = "battle";
+                        State = "askBattle";
+                        enemy = creature;
                     }
                 }
             }
@@ -121,13 +143,24 @@ namespace EragonStructure.GameEngin
 
         private void MovePlayerRight()
         {
-            player.Picture.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
+            if (player.ImageDirection)
+            {
+                player.ImageDirection = !player.ImageDirection;
+                player.Picture.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
+            }
+            
             player.Direction = Direction.East;
             player.Move();
         }
 
         private void MovePlayerLeft()
         {
+            if (!player.ImageDirection)
+            {
+                player.ImageDirection = !player.ImageDirection;
+                player.Picture.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
+            }
+
             player.Direction = Direction.West;
             player.Move();
         }

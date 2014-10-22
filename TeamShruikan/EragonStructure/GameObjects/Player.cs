@@ -77,6 +77,12 @@
 
         #region Properties
 
+        public bool ImageDirection
+        {
+            get { return imageDirection; }
+            set { imageDirection = value; }
+        }
+
         public int Level
         {
             get

@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net.Configuration;
 
     using EragonStructure.Enumerations;
     using EragonStructure.Structs;
@@ -26,6 +27,12 @@
 
         private ICollection<IInventoryItem> stash;
 
+        private bool imageDirection;
+
+        private BasicAttack attackItem;
+
+        private BasicDefence defenseItem;
+
         #endregion
 
         #region Constructors
@@ -38,7 +45,7 @@
         /// <param name="picture">The image of the player</param>
         /// <param name="name">The name of the player</param>
         protected Player(Point point, Size size, Picture picture, string name, int attack, int defence, int range,
-            int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded)
+            int currentHealthPoints, int maxHealthPoints, int movementsSpeed, int currentLevel, int experienceNeeded, bool imgDir)
             : base(point, size, picture, name, attack, defence, range, currentHealthPoints, maxHealthPoints, movementsSpeed)
         {
             this.Attack = 50;
@@ -48,14 +55,22 @@
             this.MaxHealthPoints = 100;
             this.MovementSpeed = 5;
             this.CurrentExperience = 0;
-
+            this.imageDirection = imgDir;
             this.Money = 50m;
             this.Level = currentLevel;
             this.experienceNeeded = experienceNeeded;
+            if (this.defenseItem != null)
+            {
+                this.Defense += this.defenseItem.Value;
+            }
 
+            if (this.attackItem != null)
+            {
+                this.Attack += this.attackItem.Value;
+            }
             // this.Equipment = new List<IInventoryItem>();
-            this.SetPlayerStats();                     // Initializes default player stats 
-            this.AddItemsStats(this.equipment);   // Add item stats to the player stats
+            // this.SetPlayerStats();                     // Initializes default player stats 
+            // this.AddItemsStats(this.equipment);   // Add item stats to the player stats
         }
 
         #endregion

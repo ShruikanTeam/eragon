@@ -70,11 +70,6 @@ namespace EragonStructure.GameEngin
                         painter.Window.Visible = false;
                         BattleForm formBattle = new BattleForm();
                         formBattle.ShowDialog();
-                        MessageBox.Show("Are you sure you want to fight?",
-                      "Fight ahead!", MessageBoxButtons.YesNo);
-                        painter.Window.Text = "v cikala sme";
-                        //State = "idle";
-                        formBattle.Dispose();
                     }
                     break;
                 case "menu":

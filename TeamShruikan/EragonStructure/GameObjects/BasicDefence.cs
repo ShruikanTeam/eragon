@@ -2,14 +2,12 @@
 {
     using System;
     using EragonStructure.Enumerations;
-    class BasicAttack : AttackInventoryItem
+    class BasicDefence : DeffenseInventoryItem
     {
-
-        public BasicAttack(BasicAttackItemNames item)
+        public BasicDefence(Defence item)
         {
             this.Name = item.ToString();
-            this.AttackValue = (int)item;
+            this.DeffenseValue = (int)item;
         }
-
     }
 }

@@ -51,7 +51,7 @@ namespace EragonStructure.UI
             enemyInBattle.CurrentHealthPoints -= playerInBattle.Attack - enemyInBattle.Defense;
             if (!enemyInBattle.IsAlive)
             {
-                playerInBattle.CurrentExperience += enemyInBattle.MaxHealthPoints;
+                playerInBattle.CurrentExperience = enemyInBattle.MaxHealthPoints;
                 DialogResult message = MessageBox.Show("Victory!",
                       "You win!", MessageBoxButtons.OK);
                 this.Close();
@@ -89,6 +89,7 @@ namespace EragonStructure.UI
             if (!enemyInBattle.IsAlive)
             {
                 playerInBattle.CurrentExperience += enemyInBattle.MaxHealthPoints;
+
                 DialogResult message = MessageBox.Show("Victory!",
                     "You win!", MessageBoxButtons.OK);
                 this.Close();

@@ -22,7 +22,7 @@ namespace EragonStructure.UI
     public partial class Window : Form
     {
         public const int TimeInterval = 30;
-        //private Bitmap backBuffer;
+        
         private Painter painter;
         private Picture backGround;
         private Picture heroPicture;

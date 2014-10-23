@@ -66,6 +66,7 @@
     <Compile Include="GameObjects\IInventoryItem.cs" />
     <Compile Include="GameObjects\InventoryItem.cs" />
     <Compile Include="GameObjects\MagicAttack.cs" />
+    <Compile Include="GameObjects\UserInput.cs" />
     <Compile Include="GameObjects\World.cs" />
     <Compile Include="Interfaces\IPainter.cs" />
     <Compile Include="Interfaces\KeyboardController.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="UI\BattleForm.Designer.cs">
       <DependentUpon>BattleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CustomDialog.cs" />
     <Compile Include="UI\Painter.cs" />
     <Compile Include="UI\WelcomeForm.cs">
       <SubType>Form</SubType>

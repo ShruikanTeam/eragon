@@ -37,7 +37,7 @@
         /// <summary>
         /// Gets or sets the name of the character
         /// </summary>
-        public string Name { get; protected set; }
+        public string Name { get; set; }
         
         /// <summary>
         /// Gets or sets the attack points of the character

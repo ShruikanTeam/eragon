@@ -1,4 +1,7 @@
-﻿namespace EragonStructure.GameObjects
+﻿using System.Windows.Forms;
+using EragonStructure.UI;
+
+namespace EragonStructure.GameObjects
 {
     using System;
     using System.Collections.Generic;
@@ -11,7 +14,7 @@
     /// <summary>
     /// Allows us to create classes derived from this abstract class
     /// </summary>
-    public abstract class Player : Creature, IPlayer, ILevelUp, IMovable, IDrawable
+    public abstract class Player : Creature, IPlayer, ILevelUp, IMovable
     {
         #region Fields
 
@@ -93,10 +96,7 @@
 
             private set
             {
-                if (this.CurrentExperience >= this.ExperienceNeeded)
-                {
-                    this.level += 1;
-                }
+                    this.level = value;
             }
         }
 
@@ -129,10 +129,36 @@
                     value = 0;
                 }
 
-                if (this.currentExperience >= this.ExperienceNeeded)
+                if (this.currentExperience / 200 >= 1)
                 {
-                    this.ExperienceNeeded = value;
+                    this.Level++;
+                    LevelUp();
                 }
+                else if (this.currentExperience / 400 >= 1)
+                {
+                    this.Level++;
+                    LevelUp();
+                }
+
+                //if (this.currentExperience >= this.ExperienceNeeded)
+                //{
+                //    this.ExperienceNeeded = value;
+                //}
+            }
+        }
+
+        private void LevelUp()
+        {
+            int choise = CustomDialog.ShowDialog("Level UP! Choose ability to increase:", "level up");
+
+            switch (choise)
+            {
+                case 1:
+                    this.Attack += 5;
+                    break;
+                case 2:
+                    this.Defense += 5;
+                    break;
             }
         }
 
@@ -142,7 +168,7 @@
         public int ExperienceNeeded
         {
             get { return this.experienceNeeded; }
-            private set { this.currentExperience = 500 * this.Level; }
+            private set { this.currentExperience = 100 * this.Level; }
         }
 
         /// <summary>

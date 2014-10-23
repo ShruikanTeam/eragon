@@ -16,8 +16,11 @@ namespace EragonStructure.UI
         private Form window;
         private Bitmap backBuffer;
         private Picture backGround;
-        private Picture heroPicture;
+        private Picture fighterPicture;
+        private Picture magePicture;
         private Picture creepPicture;
+        private Picture skeletonPicture;
+        private Picture bossPicture;
 
         public Painter(Form form)
         {
@@ -37,14 +40,31 @@ namespace EragonStructure.UI
             get { return backBuffer; }
         }
 
-        public Picture HeroPicture
+        public Picture FighterPicture
         {
-            get { return heroPicture; }
+            get { return fighterPicture; }
+        }
+
+        public Picture MagePicture
+        {
+            get { return magePicture; }
         }
 
         public Picture CreepPicture
         {
             get { return creepPicture; }
+            set { creepPicture = value; }
+        }
+
+        public Picture SkeletonPicture
+        {
+            get { return skeletonPicture; }
+            set { skeletonPicture = value; }
+        }
+
+        public Picture BossPicture
+        {
+            get { return bossPicture; }
         }
 
         public void LoadResources()
@@ -53,8 +73,11 @@ namespace EragonStructure.UI
             try
             {
                 backGround = new Picture(new Bitmap(Image.FromFile(resPath + @"Castles\castlemap01.jpg"), new System.Drawing.Size(window.Width, window.Height)));
-                heroPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"NiceGuys\archer2.png"), new System.Drawing.Size(80, 100)));
-                creepPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"BadGuys\BossIceMonster01.png"), new System.Drawing.Size(100, 100)));
+                fighterPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"NiceGuys\archer2.png"), new System.Drawing.Size(80, 100)));
+                magePicture = new Picture(new Bitmap(Image.FromFile(resPath + @"NiceGuys\iceWitch_welcome.png"), new System.Drawing.Size(120, 100)));
+                creepPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"BadGuys_Monsters\BossCyclop.png"), new System.Drawing.Size(90, 100)));
+                skeletonPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"BadGuys_Monsters\SkeletonArcher.png"), new System.Drawing.Size(90, 100)));
+                bossPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"BadGuys\BossIceMonster01.png"), new System.Drawing.Size(160, 160)));
             }
             catch (IOException)
             {

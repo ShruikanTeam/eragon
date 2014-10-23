@@ -36,32 +36,59 @@ namespace EragonStructure.GameEngin
             this.controller = controller;
             SubscribeToUserInput(controller);
             creatures = new List<Creature>();
-            InitializeCharacters();
+            //InitializeCharacters();
             State = "start";
         }
 
         private void InitializeCharacters()
         {
-            player = new Fighter(new Structs.Point(100, 350),
-                new EragonStructure.Structs.Size(painter.HeroPicture.Size.Width, painter.HeroPicture.Size.Height),
-                painter.HeroPicture,
-                "Archo",
-                90, 120, 10, 130, 200, 10, 1, 10, true);
+            if (UserInput.PlayerType == "fighter")
+            {
+                player = new Fighter(new Structs.Point(100, 350),
+                    new EragonStructure.Structs.Size(painter.FighterPicture.Size.Width, painter.FighterPicture.Size.Height),
+                    painter.FighterPicture,
+                    UserInput.PlayerName,
+                    90, 120, 10, 130, 200, 10, 1, 10, true);
+            }
+            else if (UserInput.PlayerType == "mage")
+            {
+                player = new Mage(new Structs.Point(100, 400),
+                    new EragonStructure.Structs.Size(painter.MagePicture.Size.Width, painter.MagePicture.Size.Height),
+                    painter.MagePicture,
+                    UserInput.PlayerName,
+                    90, 120, 10, 130, 200, 10, 1, 10, true);
+            }
+
             creatures.Add(player);
-            creatures.Add(new Creep(new Structs.Point(100, 150),
+            creatures.Add(new Creep(new Structs.Point(200, 150),
                 new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
                 painter.CreepPicture,
-                "creep",
+                "Creep",
                 60, 30, 10, 60, 100, 3));
-            creatures.Add(new Creep(new Structs.Point(300, 300),
-                new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
-                painter.CreepPicture,
-                "creep",
+            creatures.Add(new Creep(new Structs.Point(100, 200),
+                new EragonStructure.Structs.Size(painter.SkeletonPicture.Size.Width, painter.SkeletonPicture.Size.Height),
+                painter.SkeletonPicture,
+                "Skelton",
                 80, 20, 10, 60, 100, 3));
-            creatures.Add(new Creep(new Structs.Point(500, 400),
+            creatures.Add(new Creep(new Structs.Point(300, 350),
                 new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
                 painter.CreepPicture,
-                "creep",
+                "Trol",
+                40, 20, 10, 60, 100, 3));
+            creatures.Add(new Creep(new Structs.Point(500, 450),
+                new EragonStructure.Structs.Size(painter.SkeletonPicture.Size.Width, painter.SkeletonPicture.Size.Height),
+                painter.SkeletonPicture,
+                "skeleton",
+                60, 30, 10, 60, 100, 3));
+            creatures.Add(new Creep(new Structs.Point(800, 600),
+                new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
+                painter.CreepPicture,
+                "Creep",
+                50, 40, 10, 60, 100, 3));
+            creatures.Add(new Boss(new Structs.Point(800, 100),
+                new EragonStructure.Structs.Size(painter.BossPicture.Size.Width, painter.BossPicture.Size.Height),
+                painter.BossPicture,
+                "Boss",
                 120, 20, 10, 60, 100, 3));
         }
 
@@ -75,6 +102,7 @@ namespace EragonStructure.GameEngin
                         painter.Window.Visible = false;
                         WelcomeForm welcomeForm = new WelcomeForm();
                         welcomeForm.ShowDialog();
+                        InitializeCharacters();
                         painter.Window.Visible = true;
                         State = "map";
                     }
@@ -175,7 +203,7 @@ namespace EragonStructure.GameEngin
                 player.ImageDirection = !player.ImageDirection;
                 player.Picture.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
             }
-            
+
             player.Direction = Direction.East;
             player.Move();
         }

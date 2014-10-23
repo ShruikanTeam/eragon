@@ -19,6 +19,7 @@ namespace EragonStructure.UI
         public BattleForm(Player player, Creature enemy)
         {
             InitializeComponent();
+            Painter.GoFullscreen(this, true);
             this.playerInBattle = player;
             this.enemyInBattle = (Enemy)enemy;
             ShowInfo();
@@ -91,6 +92,7 @@ namespace EragonStructure.UI
                 DialogResult message = MessageBox.Show("Victory!",
                     "You win!", MessageBoxButtons.OK);
                 this.Close();
+                return;
             }
 
             playerInBattle.CurrentHealthPoints -= enemyInBattle.Attack - playerInBattle.Defense;
@@ -99,6 +101,7 @@ namespace EragonStructure.UI
                 DialogResult message = MessageBox.Show("Defeat!",
                       "You have died miserably!", MessageBoxButtons.OK);
                 this.Close();
+                return;
             }
             ShowInfo();
         }

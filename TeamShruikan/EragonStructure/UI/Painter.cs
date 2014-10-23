@@ -22,6 +22,7 @@ namespace EragonStructure.UI
         public Painter(Form form)
         {
             window = form;
+            Painter.GoFullscreen(window, true);
             LoadResources();
             CreateBackBuffer();
         }
@@ -81,6 +82,20 @@ namespace EragonStructure.UI
             
         }
 
+        public static void GoFullscreen(Form form, bool fullscreen)
+        {
+            if (fullscreen)
+            {
+                form.WindowState = FormWindowState.Normal;
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                form.Bounds = Screen.PrimaryScreen.Bounds;
+            }
+            else
+            {
+                form.WindowState = FormWindowState.Maximized;
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            }
+        }
         public void AddObject(IDrawable renderableObject)
         {
             throw new NotImplementedException();

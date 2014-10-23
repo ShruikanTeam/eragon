@@ -97,6 +97,12 @@
       <DependentUpon>BattleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Painter.cs" />
+    <Compile Include="UI\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BattleForm.resx">
       <DependentUpon>BattleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Window.resx">
       <DependentUpon>Window.cs</DependentUpon>

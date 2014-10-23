@@ -37,7 +37,7 @@ namespace EragonStructure.GameEngin
             SubscribeToUserInput(controller);
             creatures = new List<Creature>();
             InitializeCharacters();
-            State = "map";
+            State = "start";
         }
 
         private void InitializeCharacters()
@@ -69,11 +69,42 @@ namespace EragonStructure.GameEngin
         {
             switch (State)
             {
+                case "start":
+                    if (painter.Window.Visible)
+                    {
+                        painter.Window.Visible = false;
+                        WelcomeForm welcomeForm = new WelcomeForm();
+                        welcomeForm.ShowDialog();
+                        painter.Window.Visible = true;
+                        State = "map";
+                    }
+                    break;
+
                 case "map":
                     controller.CheckKeyInput();
                     DetectColision();
                     RedrawAll();
                     break;
+
+                case "askBattle":
+                    State = "menu";
+                    DialogResult message = MessageBox.Show("Are you sure you want to fight?", "Fight ahead!", MessageBoxButtons.YesNo);
+                    switch (message)
+                    {
+                        case DialogResult.Yes:
+                            State = "battle";
+                            break;
+                        case DialogResult.No:
+                            int directionOffsetX = player.Point.X.CompareTo(enemy.Point.X);
+                            int directionOffsetY = player.Point.Y.CompareTo(enemy.Point.Y);
+                            player.Point = new EragonStructure.Structs.Point(
+                                player.Point.X + directionOffsetX * (int)(player.Size.Width * 0.2),
+                                player.Point.Y + directionOffsetY * (int)(player.Size.Height * 0.2));
+                            State = "map";
+                            break;
+                    }
+                    break;
+
                 case "battle":
                     if (painter.Window.Visible)
                     {
@@ -91,26 +122,8 @@ namespace EragonStructure.GameEngin
                         State = "map";
                     }
                     break;
-                case "menu":
-                    break;
+
                 case "idle":
-                    break;
-                case "askBattle":
-                    State = "menu";
-                    DialogResult message = MessageBox.Show("Are you sure you want to fight?",
-                      "Fight ahead!", MessageBoxButtons.YesNo);
-                            switch (message)
-                            {
-                                case DialogResult.Yes:
-                                    State = "battle";
-                                    break;
-                                case DialogResult.No:
-                                    int directionOffset = player.Point.X.CompareTo(enemy.Point.X);
-                                    player.Point = new EragonStructure.Structs.Point(player.Point.X + directionOffset * (int)(player.Size.Width * 0.5), player.Point.Y);
-                                    
-                                    State = "map";
-                                    break;
-                            }
                     break;
             }
 

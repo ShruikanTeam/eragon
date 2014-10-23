@@ -37,7 +37,6 @@ namespace EragonStructure.GameEngin
             this.controller = controller;
             SubscribeToUserInput(controller);
             gameObjects = new List<GameObject>();
-            //InitializeCharacters();
             State = "start";
         }
 
@@ -145,6 +144,7 @@ namespace EragonStructure.GameEngin
                         formBattle.ShowDialog();
                         if (!player.IsAlive)
                         {
+                            //MessageBox.Show("Death", "You are defeated!" , MessageBoxButtons.OK);
                             painter.Window.Close();
                             return;
                         }

@@ -60,8 +60,7 @@ namespace EragonStructure.UI
             playerInBattle.CurrentHealthPoints -= enemyInBattle.Attack - playerInBattle.Defense;
             if (!playerInBattle.IsAlive)
             {
-                DialogResult message = MessageBox.Show("Defeat!",
-                      "You have died miserably!", MessageBoxButtons.OK);
+                DialogResult message = MessageBox.Show("You have died miserably!", "Defeat!", MessageBoxButtons.OK);
                 this.Close();
                 return;
             }

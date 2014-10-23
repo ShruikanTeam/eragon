@@ -129,21 +129,11 @@ namespace EragonStructure.GameObjects
                     value = 0;
                 }
 
-                if (this.currentExperience / 200 >= 1)
+                if (this.currentExperience % 200 >= 1)
                 {
                     this.Level++;
                     LevelUp();
                 }
-                else if (this.currentExperience / 400 >= 1)
-                {
-                    this.Level++;
-                    LevelUp();
-                }
-
-                //if (this.currentExperience >= this.ExperienceNeeded)
-                //{
-                //    this.ExperienceNeeded = value;
-                //}
             }
         }
 

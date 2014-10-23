@@ -46,13 +46,23 @@ namespace EragonStructure.GameEngin
                 new EragonStructure.Structs.Size(painter.HeroPicture.Size.Width, painter.HeroPicture.Size.Height),
                 painter.HeroPicture,
                 "Archo",
-                90, 120, 10, 100, 200, 10, 1, 10, true);
+                90, 120, 10, 130, 200, 10, 1, 10, true);
             creatures.Add(player);
-            creatures.Add(new Creep(new Structs.Point(400, 150),
+            creatures.Add(new Creep(new Structs.Point(100, 150),
                 new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
                 painter.CreepPicture,
                 "creep",
-                90, 120, 10, 60, 100, 3));
+                60, 30, 10, 60, 100, 3));
+            creatures.Add(new Creep(new Structs.Point(300, 300),
+                new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
+                painter.CreepPicture,
+                "creep",
+                80, 20, 10, 60, 100, 3));
+            creatures.Add(new Creep(new Structs.Point(500, 400),
+                new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
+                painter.CreepPicture,
+                "creep",
+                120, 20, 10, 60, 100, 3));
         }
 
         public void Play()
@@ -67,9 +77,18 @@ namespace EragonStructure.GameEngin
                 case "battle":
                     if (painter.Window.Visible)
                     {
+                        player.CurrentHealthPoints = player.MaxHealthPoints;
                         painter.Window.Visible = false;
-                        BattleForm formBattle = new BattleForm();
+                        BattleForm formBattle = new BattleForm(player, enemy);
                         formBattle.ShowDialog();
+                        if (!player.IsAlive)
+                        {
+                            painter.Window.Close();
+                            return;
+                        }
+                        painter.Window.Visible = true;
+                        creatures.Remove(enemy);
+                        State = "map";
                     }
                     break;
                 case "menu":

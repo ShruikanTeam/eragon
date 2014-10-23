@@ -25,8 +25,8 @@
             Attack = attack;
             Defense = defence;
             Range = range;
-            CurrentHealthPoints = currentHealthPoints;
             MaxHealthPoints = maxHealthPoints;
+            CurrentHealthPoints = currentHealthPoints;
             MovementSpeed = movementsSpeed;
         }
 
@@ -37,7 +37,7 @@
         /// <summary>
         /// Gets or sets the name of the character
         /// </summary>
-        protected string Name { get; set; }
+        public string Name { get; protected set; }
         
         /// <summary>
         /// Gets or sets the attack points of the character

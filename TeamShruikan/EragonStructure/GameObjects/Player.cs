@@ -15,7 +15,7 @@
     {
         #region Fields
 
-        private int level = 1;
+        private int level = 0;
 
         private int currentExperience;
 
@@ -55,10 +55,11 @@
             this.MaxHealthPoints = 100;
             this.MovementSpeed = 5;
             this.CurrentExperience = 0;
-            this.imageDirection = imgDir;
+            this.ImageDirection = imgDir;
             this.Money = 50m;
+            this.ExperienceNeeded = experienceNeeded;
             this.Level = currentLevel;
-            this.experienceNeeded = experienceNeeded;
+            
             if (this.defenseItem != null)
             {
                 this.Defense += this.defenseItem.Value;

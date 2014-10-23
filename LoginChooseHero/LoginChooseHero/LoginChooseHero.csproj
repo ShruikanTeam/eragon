@@ -46,15 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
+    <Compile Include="GameForms\HeroChoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GameForms\HeroChoice.Designer.cs">
+      <DependentUpon>HeroChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameForms\Heroes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameForms\Heroes.Designer.cs">
+      <DependentUpon>Heroes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameForms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameForms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <Compile Include="Validation.cs" />
+    <EmbeddedResource Include="GameForms\HeroChoice.resx">
+      <DependentUpon>HeroChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameForms\Heroes.resx">
+      <DependentUpon>Heroes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameForms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -79,6 +98,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\Backgrounds\CastleInClouds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\CastleAtSea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\Archer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\Ninja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\IceMage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\RedKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\Viking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\IceWitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\winterCastle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\btnGoldSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\btnGoldBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Backgrounds\winterCastle02.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

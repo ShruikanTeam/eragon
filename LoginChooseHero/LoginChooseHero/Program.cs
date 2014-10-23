@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-
-namespace LoginChooseHero
+﻿namespace LoginChooseHero
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Windows.Forms;
+    using LoginChooseHero.GameForms;
+
     static class Program
     {
         /// <summary>

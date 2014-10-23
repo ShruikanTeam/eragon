@@ -1,4 +1,4 @@
-﻿namespace LoginChooseHero
+﻿namespace LoginChooseHero.GameForms
 {
     using System;
     using System.ComponentModel;
@@ -39,50 +39,68 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblErrorMessage = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(86, 288);
+            this.txtUserName.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtUserName.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(79, 288);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(117, 20);
+            this.txtUserName.Size = new System.Drawing.Size(117, 29);
             this.txtUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtPassword.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(209, 288);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(117, 20);
+            this.txtPassword.Size = new System.Drawing.Size(117, 29);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(148, 259);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Algerian", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label1.Image = global::LoginChooseHero.Properties.Resources.btnGoldSmall;
+            this.label1.Location = new System.Drawing.Point(82, 251);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Padding = new System.Windows.Forms.Padding(3);
+            this.label1.Size = new System.Drawing.Size(114, 27);
             this.label1.TabIndex = 3;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(212, 259);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Algerian", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.Image = global::LoginChooseHero.Properties.Resources.btnGoldSmall;
+            this.label2.Location = new System.Drawing.Point(213, 251);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Padding = new System.Windows.Forms.Padding(3);
+            this.label2.Size = new System.Drawing.Size(113, 27);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(89, 314);
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Font = new System.Drawing.Font("Algerian", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnLogin.Image = global::LoginChooseHero.Properties.Resources.btnGoldSmall;
+            this.btnLogin.Location = new System.Drawing.Point(111, 334);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(0);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(114, 23);
+            this.btnLogin.Size = new System.Drawing.Size(201, 44);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "LOGIN";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // lblErrorMessage
@@ -96,28 +114,18 @@
             this.lblErrorMessage.Size = new System.Drawing.Size(0, 13);
             this.lblErrorMessage.TabIndex = 5;
             // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(209, 314);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(117, 23);
-            this.btnRegister.TabIndex = 6;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.Login_Load);
-            // 
             // Login
             // 
-            this.BackgroundImage = global::LoginChooseHero.Properties.Resources.CastleInClouds;
+            this.BackgroundImage = global::LoginChooseHero.Properties.Resources.CastleInClouds1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1272, 766);
-            this.Controls.Add(this.btnRegister);
+            this.ClientSize = new System.Drawing.Size(1200, 740);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -134,7 +142,6 @@
         private Label label2;
         private Button btnLogin;
         private Label lblErrorMessage;
-        private Button btnRegister;
     }
 }
 

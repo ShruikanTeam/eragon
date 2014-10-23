@@ -21,6 +21,7 @@ namespace EragonStructure.UI
         private Picture creepPicture;
         private Picture skeletonPicture;
         private Picture bossPicture;
+        private Picture bowPicture;
 
         public Painter(Form form)
         {
@@ -67,6 +68,12 @@ namespace EragonStructure.UI
             get { return bossPicture; }
         }
 
+        public Picture BowPicture
+        {
+            get { return bowPicture; }
+            set { bowPicture = value; }
+        }
+
         public void LoadResources()
         {
             string resPath = Directory.GetCurrentDirectory() + @"..\..\..\Resources\";
@@ -78,6 +85,7 @@ namespace EragonStructure.UI
                 creepPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"BadGuys_Monsters\BossCyclop.png"), new System.Drawing.Size(90, 100)));
                 skeletonPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"BadGuys_Monsters\SkeletonArcher.png"), new System.Drawing.Size(90, 100)));
                 bossPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"BadGuys\BossIceMonster01.png"), new System.Drawing.Size(160, 160)));
+                bowPicture = new Picture(new Bitmap(Image.FromFile(resPath + @"NiceGuys\FFXI_Archery_2.png"), new System.Drawing.Size(80, 80)));
             }
             catch (IOException)
             {

@@ -1,4 +1,6 @@
 ﻿
+using EragonStructure.Structs;
+
 namespace EragonStructure.GameObjects
 {
     using System;
@@ -6,7 +8,8 @@ namespace EragonStructure.GameObjects
 
     public class MagicAttack : AttackInventoryItem
     {
-        public MagicAttack(MagicAttackItemsNames item)
+        public MagicAttack(Point point, Size size, Picture picture, MagicAttackItemsNames item)
+            : base(point, size, picture)
         {
             this.Name = item.ToString();
             this.AttackValue = (int)item;

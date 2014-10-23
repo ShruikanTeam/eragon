@@ -34,16 +34,18 @@
             if (itemType == typeof(BasicAttackItemNames))
             {
                 BasicAttackItemNames itemRand = (BasicAttackItemNames)values.GetValue(rand.Next(values.Length));
-                BasicAttack item = new BasicAttack(itemRand);
+                //BasicAttack item = new BasicAttack(itemRand);
 
-                return item;
+                //return item;
+                return null;
             }
             else
             {
                 Defence itemRand = (Defence)values.GetValue(rand.Next(values.Length));
-                DeffenseInventoryItem item = new BasicDefence(itemRand);
+                //DeffenseInventoryItem item = new BasicDefence(itemRand);
 
-                return item;
+                //return item;
+                return null;
             }
             
         }

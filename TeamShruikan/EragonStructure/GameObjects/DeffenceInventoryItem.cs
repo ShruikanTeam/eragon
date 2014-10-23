@@ -1,8 +1,14 @@
 ﻿using System;
+using EragonStructure.Structs;
+
 namespace EragonStructure.GameObjects
 {
     public abstract class DeffenseInventoryItem : InventoryItem
     {
+        protected DeffenseInventoryItem(Point point, Size size, Picture picture) : base(point, size, picture)
+        {
+        }
+
         private decimal deffenseValue;
 
         public decimal DeffenseValue

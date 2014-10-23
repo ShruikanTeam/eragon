@@ -16,9 +16,10 @@ namespace EragonStructure.GameEngin
 {
     public class Engine
     {
-        private List<Creature> creatures;
+        private List<GameObject> gameObjects;
         private Player player;
         private Creature enemy;
+        private BasicAttack item;
         private KeyboardController controller;
         private string state;
 
@@ -35,7 +36,7 @@ namespace EragonStructure.GameEngin
             this.painter = painter;
             this.controller = controller;
             SubscribeToUserInput(controller);
-            creatures = new List<Creature>();
+            gameObjects = new List<GameObject>();
             //InitializeCharacters();
             State = "start";
         }
@@ -59,37 +60,39 @@ namespace EragonStructure.GameEngin
                     90, 120, 10, 130, 200, 10, 1, 10, true);
             }
 
-            creatures.Add(player);
-            creatures.Add(new Creep(new Structs.Point(200, 150),
+            gameObjects.Add(player);
+            gameObjects.Add(new Creep(new Structs.Point(200, 150),
                 new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
                 painter.CreepPicture,
                 "Creep",
                 60, 30, 10, 60, 100, 3));
-            creatures.Add(new Creep(new Structs.Point(100, 200),
+            gameObjects.Add(new Creep(new Structs.Point(100, 200),
                 new EragonStructure.Structs.Size(painter.SkeletonPicture.Size.Width, painter.SkeletonPicture.Size.Height),
                 painter.SkeletonPicture,
                 "Skelton",
                 80, 20, 10, 60, 100, 3));
-            creatures.Add(new Creep(new Structs.Point(300, 350),
+            gameObjects.Add(new Creep(new Structs.Point(300, 350),
                 new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
                 painter.CreepPicture,
                 "Trol",
                 40, 20, 10, 60, 100, 3));
-            creatures.Add(new Creep(new Structs.Point(500, 450),
+            gameObjects.Add(new Creep(new Structs.Point(500, 450),
                 new EragonStructure.Structs.Size(painter.SkeletonPicture.Size.Width, painter.SkeletonPicture.Size.Height),
                 painter.SkeletonPicture,
                 "skeleton",
                 60, 30, 10, 60, 100, 3));
-            creatures.Add(new Creep(new Structs.Point(800, 600),
+            gameObjects.Add(new Creep(new Structs.Point(800, 600),
                 new EragonStructure.Structs.Size(painter.CreepPicture.Size.Width, painter.CreepPicture.Size.Height),
                 painter.CreepPicture,
                 "Creep",
                 50, 40, 10, 60, 100, 3));
-            creatures.Add(new Boss(new Structs.Point(800, 100),
+            gameObjects.Add(new Boss(new Structs.Point(800, 100),
                 new EragonStructure.Structs.Size(painter.BossPicture.Size.Width, painter.BossPicture.Size.Height),
                 painter.BossPicture,
                 "Boss",
                 120, 20, 10, 60, 100, 3));
+            GameObject bow = new BasicAttack(new Structs.Point(600, 500), new EragonStructure.Structs.Size(painter.BowPicture.Size.Width, painter.BowPicture.Size.Height), painter.BowPicture, BasicAttackItemNames.GoldenBow);
+            gameObjects.Add(bow);
         }
 
         public void Play()
@@ -146,11 +149,16 @@ namespace EragonStructure.GameEngin
                             return;
                         }
                         painter.Window.Visible = true;
-                        creatures.Remove(enemy);
+                        gameObjects.Remove(enemy);
                         State = "map";
                     }
                     break;
-
+                case "item":
+                    State = "map";
+                    gameObjects.Remove(item);
+                    MessageBox.Show("You picked an item", "Congrats!", MessageBoxButtons.OK);
+                    
+                    break;
                 case "idle":
                     break;
             }
@@ -160,16 +168,32 @@ namespace EragonStructure.GameEngin
         private void DetectColision()
         {
             Rectangle playerRect = new Rectangle(player.Point.X, player.Point.Y, player.Size.Width, player.Size.Height);
-            foreach (var creature in creatures)
+            foreach (var gameObject in gameObjects)
             {
-                if (creature is Enemy)
+                if (gameObject is Enemy)
                 {
-                    Rectangle enemyRect = new Rectangle(creature.Point.X, creature.Point.Y, creature.Size.Width, creature.Size.Height);
+                    Rectangle enemyRect = new Rectangle(gameObject.Point.X, gameObject.Point.Y, gameObject.Size.Width, gameObject.Size.Height);
                     if (playerRect.IntersectsWith(enemyRect))
                     {
                         painter.Window.Text = "battle!!!";
                         State = "askBattle";
-                        enemy = creature;
+                        enemy = (Creature)gameObject;
+                    }
+                }
+
+                if (gameObject is InventoryItem)
+                {
+                    if (gameObject is AttackInventoryItem)
+                    {
+                        Rectangle itemRect = new Rectangle(gameObject.Point.X, gameObject.Point.Y, gameObject.Size.Width, gameObject.Size.Height);
+                        if (playerRect.IntersectsWith(itemRect))
+                        {
+                            painter.Window.Text = "Item found!";
+                            player.Attack += (int)((AttackInventoryItem)gameObject).AttackValue;
+                            item = (BasicAttack)gameObject;
+                            State = "item";
+                        }
+                        
                     }
                 }
             }
@@ -178,9 +202,9 @@ namespace EragonStructure.GameEngin
         private void RedrawAll()
         {
             painter.Update();
-            if (creatures.Count > 0)
+            if (gameObjects.Count > 0)
             {
-                foreach (var gameObject in creatures)
+                foreach (var gameObject in gameObjects)
                 {
                     gameObject.Draw(Graphics.FromImage(painter.Canvas));
                     painter.Window.Invalidate();

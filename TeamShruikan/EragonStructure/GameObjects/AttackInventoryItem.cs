@@ -1,8 +1,13 @@
-﻿namespace EragonStructure.GameObjects
+﻿using EragonStructure.Structs;
+
+namespace EragonStructure.GameObjects
 {
 using System;
     public abstract class AttackInventoryItem : InventoryItem
     {
+        protected AttackInventoryItem(Point point, Size size, Picture picture) : base(point, size, picture)
+        {
+        }
 
         private decimal attackValue;
 

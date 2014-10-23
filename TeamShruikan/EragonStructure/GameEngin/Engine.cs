@@ -37,7 +37,6 @@ namespace EragonStructure.GameEngin
             this.controller = controller;
             SubscribeToUserInput(controller);
             gameObjects = new List<GameObject>();
-            //InitializeCharacters();
             State = "start";
         }
 
